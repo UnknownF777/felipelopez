@@ -1,0 +1,48 @@
+# Configuración de Dependabot para actualizaciones automáticas de seguridad
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates
+
+version: 2
+updates:
+  # Mantener dependencias de npm actualizadas
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Santiago"
+    # Límite de Pull Requests abiertos simultáneamente
+    open-pull-requests-limit: 10
+    # Agrupar actualizaciones por tipo
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+      development-dependencies:
+        dependency-type: "development"
+    # Etiquetar automáticamente los PRs
+    labels:
+      - "dependencies"
+      - "npm"
+      - "security"
+    # Estrategia de versionado
+    versioning-strategy: auto
+    # Revisar y actualizar lockfile
+    allow:
+      - dependency-type: "all"
+    # Ignorar actualizaciones mayores de ciertos paquetes (opcional)
+    # ignore:
+    #   - dependency-name: "tailwindcss"
+    #     update-types: ["version-update:semver-major"]
+
+  # Mantener GitHub Actions actualizadas
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Santiago"
+    open-pull-requests-limit: 5
+    labels:
+      - "github-actions"
+      - "dependencies"

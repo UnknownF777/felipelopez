@@ -1,0 +1,213 @@
+# =====================================================
+# ARCHIVO DE SEGURIDAD - PEDRORIVERA.NET
+# Configuración Apache para headers de seguridad HTTP
+# =====================================================
+
+# Habilitar RewriteEngine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # =====================================================
+    # REDIRECCIÓN HTTPS (Forzar SSL)
+    # =====================================================
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # =====================================================
+    # NORMALIZACIÓN WWW (Redirigir www a no-www)
+    # =====================================================
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+    # =====================================================
+    # REMOVER INDEX.HTML DE LA URL
+    # =====================================================
+    # Si la URL termina en /index.html, redirigir a /
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]*/)index\.html\ HTTP/
+    RewriteRule ^(.*)index\.html$ /%1 [R=301,L]
+
+    # Si alguien accede a /index.html directamente, redirigir a /
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+    RewriteRule ^index\.html$ / [R=301,L]
+
+    # =====================================================
+    # TRAILING SLASH (Agregar barra final a directorios)
+    # =====================================================
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !(.*)/$
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+</IfModule>
+
+# =====================================================
+# CONFIGURAR DIRECTORYINDEX
+# =====================================================
+DirectoryIndex index.html index.htm
+
+# =====================================================
+# HEADERS DE SEGURIDAD HTTP
+# =====================================================
+
+<IfModule mod_headers.c>
+    # Prevenir Clickjacking - solo permite que el sitio sea cargado en frames del mismo origen
+    Header set X-Frame-Options "SAMEORIGIN" env=!HTTPS
+    Header always set X-Frame-Options "SAMEORIGIN" env=HTTPS
+
+    # Prevenir MIME-type sniffing
+    Header set X-Content-Type-Options "nosniff" env=!HTTPS
+    Header always set X-Content-Type-Options "nosniff" env=HTTPS
+
+    # Activar protección XSS del navegador
+    Header set X-XSS-Protection "1; mode=block" env=!HTTPS
+    Header always set X-XSS-Protection "1; mode=block" env=HTTPS
+
+    # Política de referencia - protege información sensible en URLs
+    Header set Referrer-Policy "strict-origin-when-cross-origin" env=!HTTPS
+    Header always set Referrer-Policy "strict-origin-when-cross-origin" env=HTTPS
+
+    # Política de permisos - deshabilitar APIs peligrosas
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()" env=!HTTPS
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()" env=HTTPS
+
+    # Content Security Policy - protección contra XSS e inyección de código
+    # Ajustar según los recursos externos que uses
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://formsubmit.co https://cdn.jsdelivr.net https://oss.maxcdn.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://formsubmit.co; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co; frame-ancestors 'self'; upgrade-insecure-requests;" env=!HTTPS
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://formsubmit.co https://cdn.jsdelivr.net https://oss.maxcdn.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://formsubmit.co; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co; frame-ancestors 'self'; upgrade-insecure-requests;" env=HTTPS
+
+    # Cross-Origin headers adicionales para mejor puntuación
+    Header set Cross-Origin-Embedder-Policy "require-corp" env=!HTTPS
+    Header always set Cross-Origin-Embedder-Policy "require-corp" env=HTTPS
+
+    Header set Cross-Origin-Opener-Policy "same-origin" env=!HTTPS
+    Header always set Cross-Origin-Opener-Policy "same-origin" env=HTTPS
+
+    Header set Cross-Origin-Resource-Policy "same-origin" env=!HTTPS
+    Header always set Cross-Origin-Resource-Policy "same-origin" env=HTTPS
+
+    # Strict Transport Security - ACTIVADO (ya tienes HTTPS)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+
+    # Quitar headers que exponen información del servidor
+    Header unset Server
+    Header unset X-Powered-By
+</IfModule>
+
+# =====================================================
+# PROTECCIÓN CONTRA HOTLINKING DE IMÁGENES
+# =====================================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{HTTP_REFERER} !^$
+    RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?pedrorivera\.net [NC]
+    RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?google\. [NC]
+    RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?bing\. [NC]
+    RewriteRule \.(jpg|jpeg|png|gif|svg|webp|ico)$ - [NC,F,L]
+</IfModule>
+
+# =====================================================
+# BLOQUEAR ACCESO A ARCHIVOS SENSIBLES
+# =====================================================
+
+<FilesMatch "(^\.htaccess|^\.env|\.git|\.gitignore|composer\.json|package\.json|webpack\.config\.js|\.log|\.sql|\.sh)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# =====================================================
+# DESACTIVAR LISTADO DE DIRECTORIOS
+# =====================================================
+
+Options -Indexes
+
+# =====================================================
+# PÁGINAS DE ERROR PERSONALIZADAS
+# =====================================================
+
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# =====================================================
+# PROTECCIÓN CONTRA INYECCIÓN DE CÓDIGO
+# =====================================================
+
+<IfModule mod_rewrite.c>
+    # Bloquear acceso con query strings sospechosas
+    RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|[|%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|[|%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} proc/self/environ [NC,OR]
+    RewriteCond %{QUERY_STRING} mosConfig_[a-zA-Z_]{1,21}(=|%3D) [OR]
+    RewriteCond %{QUERY_STRING} base64_encode.*(.*) [OR]
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\.\.//|\.\.\\|\.\.%2F|\.\.%5C) [NC,OR]
+    RewriteCond %{QUERY_STRING} (union.*select|select.*union) [NC,OR]
+    RewriteCond %{QUERY_STRING} (drop.*table|drop.*database) [NC,OR]
+    RewriteCond %{QUERY_STRING} (<|%3C).*object.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (javascript:|vbscript:|data:text/html) [NC]
+    RewriteRule ^(.*)$ - [F,L]
+</IfModule>
+
+# =====================================================
+# COMPRESIÓN GZIP (Mejora rendimiento)
+# =====================================================
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# =====================================================
+# CACHE CONTROL (Mejora rendimiento)
+# =====================================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Imágenes
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # CSS y JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+
+    # Fuentes
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+
+    # HTML
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# =====================================================
+# BLOQUEAR USER AGENTS MALICIOSOS
+# =====================================================
+
+<IfModule mod_rewrite.c>
+    # Bloquear user agents vacíos (posibles ataques)
+    RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+    # Bloquear scrapers maliciosos pero PERMITIR bots legítimos de búsqueda
+    RewriteCond %{HTTP_USER_AGENT} ^.*(libwww-perl|scanner|nikto|sqlmap|masscan|nmap|zaproxy|metasploit|havij|acunetix).*$ [NC]
+    RewriteCond %{HTTP_USER_AGENT} !^.*(googlebot|bingbot|msnbot|yahoo|duckduckbot|baiduspider|yandex|facebookexternalhit|twitterbot|linkedinbot|slackbot|whatsapp).*$ [NC]
+    RewriteRule ^(.*)$ - [F,L]
+</IfModule>
