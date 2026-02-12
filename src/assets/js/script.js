@@ -1,10 +1,3 @@
-/*
-* ----------------------------------------------------------------------------------------
-Author       : Tanvir Hossain
-Template Name: Nino - Premium Portfolio Template
-Version      : 1.0                                          
-* ----------------------------------------------------------------------------------------
-*/
 
 (function ($) {
   "use strict";
@@ -486,3 +479,23 @@ Version      : 1.0
     });
   });
 })(jQuery); // End jQuery
+
+document.addEventListener("DOMContentLoaded", function () {
+  const techSection = document.querySelector("#technologies");
+  if (!techSection) return;
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          techSection.classList.add("skills-visible");
+          obs.disconnect(); // solo una vez
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(techSection);
+});
+

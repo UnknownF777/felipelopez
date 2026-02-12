@@ -1,33 +1,4 @@
-/*
-* ----------------------------------------------------------------------------------------
-Author       : Tanvir Hossain
-Template Name: Nino - Premium Portfolio Template
-Version      : 1.0                                          
-* ----------------------------------------------------------------------------------------
-*/
 
-/*
-* ----------------------------------------------------------------------------------------
-* 01.GLOBAL CSS STYLE
-* 02.COMMON CSS STYLE
-* 03.MENU CSS STYLE
-* 04.HEADER CSS STYLE
-* 05.ABOUT CSS STYLE
-* 06.SERVICE CSS STYLE
-* 07.SKILL CSS STYLE
-* 08.RESUME CSS STYLE
-* 09.PORTFOLIO CSS STYLE
-* 10.TESTIMONIALS CSS STYLE
-* 11.PRICING CSS STYLE
-* 12.CLIENTS CSS STYLE
-* 13.CONTACT CSS STYLE
-* 14.FOOTER CSS STYLE
-* 15.PRELOADER & BOUNCE CCS STYLE
-* 16.BLOG CSS STYLE
-* 17.Mobile Menu CSS STYLE
-* 18.Responsive CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
 /* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
@@ -43,6 +14,149 @@ Version      : 1.0
 * ----------------------------------------------------------------------------------------
 */
 
+/* TÍTULO CERTIFICACIONES */
+.cert-title {
+    color: #1A1A1A; /* Negro moderno */
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+/* Tamaño uniforme para los botones de certificaciones */
+.theme-btn.cert-btn {
+  display: grid;
+  grid-template-columns: 40px 1fr;  /* columna fija para el ícono */
+  align-items: center;
+  width: 100%;
+  max-width: 420px; /* ajusta según tu diseño */
+  padding: 16px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  gap: 10px;
+}
+
+.theme-btn.cert-btn i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    width: 40px;   /* coincide con la columna fija */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Alinear el botón de Descargar CV igual que los demás */
+.btn-with-icon {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+/* Colores */
+.google-btn {
+  background-color: #34A853; /* verde Google */
+  color: #fff;
+}
+.google-btn:hover { background-color: #2c8a46; }
+
+.microsoft-btn {
+  background-color: #F2C811; /* amarillo Power BI */
+  color: #111;                /* texto oscuro para contraste */
+}
+.microsoft-btn:hover { background-color: #d5ae0f; }
+
+/* Carrusel texto posicionado grande*/
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee span {
+  display: inline-block;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  cursor: default;
+}
+
+.animate-marquee span:hover {
+  transform: scale(1.15);
+   /* azul vibrante */
+}
+
+/* Clase general para los botones */
+.custom-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover: cambia fondo al color del fondo de tu web y texto a negro */
+.custom-btn:hover {
+  background-color: rgba(244, 243, 237);  /* Color beige claro del fondo */
+  color: black;
+}
+
+
+/* Responsive refinado opcional (por si no usas Tailwind) */
+@media (max-width: 640px) {
+  .animate-marquee {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 641px) and (max-width: 768px) {
+  .animate-marquee {
+    font-size: 1.25rem;
+  }
+}
+/*Codigo prueba de aqui para abajo*/
+/* Contenedor de la barra */
+.skill-bar-bg {
+  @apply w-full bg-[#e5e7eb] rounded-full h-[10px] overflow-hidden;
+}
+
+/* Relleno de la barra (estado inicial = 0%) */
+.skill-bar-fill {
+  @apply h-full rounded-full;
+  background: linear-gradient(90deg, #3b82f6, #2563eb); /* azul degradado elegante */
+  width: 0%;
+  transition: width 1s ease-out;
+}
+
+/* Cuando la sección entra en viewport, animar hasta --level */
+.skills-visible .skill-bar-fill {
+  width: var(--level);
+}
+
+/* Ajusta el título y elimina padding excesivo del template */
+#technologies .section-title {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Opcional: para que el bloque completo respire mejor */
+#technologies {
+  padding-top: 2rem !important;
+}
+
+
+
+
+/*fin del codigo prueba*/
   body {
     @apply font-textFont leading-[30px];
   }
@@ -512,11 +626,10 @@ Version      : 1.0
   }
 
   /* Regla de alta especificidad final para asegurar tamaño del logo */
-  header.main-header .header-upper .header-inner .logo-area .logo img {
-    width: auto !important;
-    max-width: 180px !important;
-    height: auto !important;
-  }
+ header.main-header .header-upper .header-inner .logo-area .logo img {
+    max-width: 120px !important;  /* <-- tamaño ideal */
+}
+
 
   /* Main Menu */
   .main-menu {

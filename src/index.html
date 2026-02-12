@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Felipe López Astete· Analista de datos" />
+    <meta name="description" content="Felipe López · Data & BI Analyst" />
     <meta
       name="keywords"
       content="personal, portfolio new, html, one page, tailwind, new html template, design, creative, onepage, clean, modern"
@@ -13,7 +13,7 @@
     <meta name="author" content="Tanvir Hossain" />
     <!-- PAGE TITLE -->
     <title>
-    Felipe López Astete · Analista de datos </title>
+    Felipe López · Data & BI Analyst </title>
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
 
     <!-- FONT AWESOME CSS -->
@@ -118,8 +118,12 @@
               <div class="col-span-6 sm:col-span-3 xl:col-span-2">
                 <div class="logo-area">
                   <div class="logo">
-                    <a href="/">
-                      <img src="./assets/images/logo.png" alt="Logo Felipe López Astete" class="w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] max-w-full h-auto transition-all duration-300" loading="lazy" />
+                    <a href="/" class="flex items-center">
+                      <img 
+                        src="./assets/images/logo.png" 
+                        alt="Felipe López - Data Analyst" 
+                        class="h-6 md:h-8 w-auto object-contain rounded-xl shadow-sm"
+                      >
                     </a>
                   </div>
                 </div>
@@ -175,14 +179,15 @@
     <div class="body-overlay"></div>
     <!-- // END MOBILE MENU DESIGN AREA-->
     <!-- START HEADER DESIGN AREA -->
-    <section id="home" class="bg-primaryColor pt-[115px]">
+    <section id="home" class="bg-primaryColor pt-[90px]">
       <div class="container">
         <div class="grid grid-cols-12">
           <div class="col-span-12">
             <!-- START HERO DESIGN AREA -->
             <div class="wow fadeInUp delay-0-2s p-0 text-center">
               <h2
-                class="text-center text-[50px] sm:text-[70px] md:text-[90px] lg:text-[110px] xl:text-[150px] font-medium uppercase text-mainColor leading-[0.95] break-words max-w-full"
+                class="text-center text-[50px] sm:text-[70px] md:text-[90px] lg:text-[110px]
+                 xl:text-[150px] font-medium uppercase text-mainColor leading-[0.95] break-words max-w-full"
                 style="word-wrap: break-word;"
               >
                 Felipe López Astete
@@ -194,36 +199,85 @@
         <div class="grid grid-cols-12 max-lg:overflow-hidden lg:gap-6">
           <div class="col-span-12 pt-8 lg:col-span-3">
             <!-- START HERO DESIGN AREA -->
-            <div
-              class="hero-content wow fadeInUp delay-0-2s max-xl:p-0 max-md:p-0"
-            >
-              <div class="clienti-reviews">
-                <div class="reviews">
-                  4+ años <span>experiencia</span>
-                  <p>Desarrollando software confiable y escalable.</p>
-                </div>
+            <div class="flex flex-col justify-start text-black h-auto lg:h-fit">
+              <!-- Texto alineado a la izquierda -->
+               <p class="pb-4"> <strong>Analista</strong> e <strong>Ingeniero en Informática</strong><br />
+                con certificación profesional de <strong>Google</strong> en <strong>Análisis de Datos</strong>.
+              </p>
+              
+              <!-- Imagen centrada debajo -->
+              <!-- Imagen centrada sin afectar el texto -->
+              <div class="flex justify-center mt-2">
+                <a href="https://coursera.org/share/4153c0c7fb689fe57aada1e867c10180" target="_blank" rel="noopener noreferrer">
+                  <img
+                  class="max-w-[90px] sm:max-w-[110px] md:max-w-[130px] h-auto object-contain"
+                  src="./assets/images/avatar/01.png"
+                  alt="Certificado Google Data Analytics"
+                  loading="lazy"/>
+                </a>
+               </div>
+               <!-- Segundo párrafo -->
+                <p class="pt-4"> Transformo datos en decisiones estratégicas que aumentan la eficiencia, reducen costos 
+                  y potencian el crecimiento del negocio.
+                </p>
               </div>
-            </div>
             <!-- / END HERO DESIGN AREA -->
           </div>
           <div class="col-span-12 lg:col-span-6">
             <div class="hero-image lg:mt-0">
-              <img src="./assets/images/about/me.jpg" alt="Foto de Felipe López Astete"
+              <img src="./assets/images/about/me.jpg" alt="Foto de Felipe López"
               class="w-full h-auto max-w-[300px] md:max-w-[400px] lg:max-w-[420px] xl:max-w-[450px] mx-auto"
               loading="lazy" />
             </div>
-            <!-- / END HERO DESIGN AREA -->
           </div>
+          <!-- / END HERO DESIGN AREA -->
           <div class="col-span-12 pt-8 lg:col-span-3">
             <div class="hero-content wow fadeInUp delay-0-4s">
               <p class="pb-4">
-                <strong>Desarrollador Full Stack</strong>, con un enfoque
-                en la innovación, la experiencia del usuario y la
-                evolución constante del desarrollo moderno.
+                <strong>Data & BI Analyst</strong> especialista en convertir información compleja
+                 en soluciones que optimizan procesos, anticipan tendencias y generan ventajas competitivas.
               </p>
-              <a class="theme-btn" href="./docs/CV_Felipe_López.pdf" download="CV_Felipe_López.pdf">
-                <i class="ri-download-line"></i> Descargar CV
+
+              <!-- Boton CV -->
+              <a href="./docs/CV_Felipe_López.pdf" download="CV_Felipe_López.pdf" class="custom-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+                </svg>
+                Descargar CV
               </a>
+
+
+              <!-- Titulo Certificaciones -->
+              <h3 class="cert-title"><strong>Certificaciones</strong></h3>
+
+              <!-- Boton Certificado Google Data Analytics -->
+              <a href="./docs/Certificado_Google_Data_Analytics.pdf"
+                download="Certificado_Google_Data_Analytics.pdf"
+                class="custom-btn"
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+                </svg>
+                Google Data Analytics
+              </a>
+
+              <!-- Boton Certificado Microsoft Power BI -->
+              <a href="./docs/Certificado_Microsoft_PowerBI.pdf" download="Certificado_PowerBI_Data_Analyst.pdf"
+                class="custom-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+                </svg>
+                <span class="text-center leading-tight">
+                  Microsoft Power BI Data Analyst Specialization<br>(En proceso)
+                </span>
+              </a>
+
             </div>
             <!-- / END HERO DESIGN AREA -->
           </div>
@@ -233,69 +287,125 @@
     <!-- / END HEADER DESIGN AREA -->
 
     <!-- START COMPANY DESIGN AREA -->
-    <div class="company-design-area">
-      <div class="container">
-        <div class="grid grid-cols-12 gap-6">
-          <div class="col-span-12">
-            <h2>Empresas con las que he colaborado</h2>
-            <div class="company-list">
-              <div
-                class="scroller"
-                data-animated="true"
-                data-direction="left"
-                data-speed="slow"
-              >
-                <div class="scroller__inner">
-                  <img src="./assets/images/client-logos/partner1.png" alt="Company" class="max-w-full h-auto" loading="lazy" />
-                  <img src="./assets/images/client-logos/partner2.png" alt="Company" class="max-w-full h-auto" loading="lazy" />
-                  <img src="./assets/images/client-logos/partner3.png" alt="Company" class="max-w-full h-auto" loading="lazy" />
-                  <img src="./assets/images/client-logos/partner4.png" alt="Company" class="max-w-full h-auto" loading="lazy" />
-                </div>
-              </div>
-            </div>
+    <!-- START TOOL NAMES AREA -->
+<div class="company-design-area bg-black py-12">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 text-center">
+        <h2 class="wow fadeInUp text-white uppercase tracking-widest mb-4"
+            data-wow-duration="1.2s"
+            data-wow-delay="0.2s">
+          Stack de herramientas clave en mi flujo de trabajo
+        </h2>
+        <div class="overflow-hidden relative h-12">
+          <div class="flex animate-marquee whitespace-nowrap text-white text-xl font-semibold space-x-12">
+            <span class="tool-name tool-google-sheets">Google Sheets</span>
+            <span class="tool-name tool-excel">Excel</span>
+            <span class="tool-name tool-bigquery">BigQuery</span>
+            <span class="tool-name tool-powerbi">Power BI</span>
+            <span class="tool-name tool-tableau">Tableau</span>
+            <span class="tool-name tool-sql">SQL</span>
+            <span class="tool-name tool-r">R</span>
+            <span class="tool-name tool-python">Python</span>
+            <span class="tool-name tool-ga">Google Analytics</span>
+            <span class="tool-name tool-gtm">Google Tag Manager</span>
+            <!-- Repetir para efecto continuo -->
+            <span class="tool-name tool-google-sheets">Google Sheets</span>
+            <span class="tool-name tool-excel">Excel</span>
+            <span class="tool-name tool-bigquery">BigQuery</span>
+            <span class="tool-name tool-powerbi">Power BI</span>
+            <span class="tool-name tool-tableau">Tableau</span>
+            <span class="tool-name tool-sql">SQL</span>
+            <span class="tool-name tool-r">R</span>
+            <span class="tool-name tool-python">Python</span>
+            <span class="tool-name tool-ga">Google Analytics</span>
+            <span class="tool-name tool-gtm">Google Tag Manager</span>
+
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+<!-- Animation CSS -->
+<style>
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.tool-name {
+  display: inline-block;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  cursor: default;
+}
+.tool-name:hover {
+  transform: scale(1.15);
+}
+
+/* Colores personalizados por marca */
+.tool-google-sheets:hover { color: #0F9D58; }        /* Verde Google */
+.tool-excel:hover { color: #217346; }                /* Verde Excel */
+.tool-bigquery:hover { color: #4285F4; }             /* Azul Google */
+.tool-powerbi:hover { color: #F2C811; }              /* Amarillo Power BI */
+.tool-tableau:hover { color: #E97627; }              /* Naranja Tableau */
+.tool-sql:hover { color: #4479A1; }                  /* Azul SQL Server */
+.tool-r:hover { color: #276DC3; }                    /* Azul R */
+.tool-python:hover { color: #3776AB; }               /* Azul Python */
+.tool-ga:hover { color: #FF6D01; }                   /* Naranja Google Analytics */
+.tool-gtm:hover { color: #00B4AB; }                  /* Verde azulado GTM */
+
+
+
+</style>
     <!-- // END COMPANY DESIGN AREA -->
 
     <!-- START ABOUT DESIGN AREA -->
-    <section id="about" class="about-area">
+    <section id="about" class="about-area pt-10 -mt-10">
       <div class="container">
         <div class="grid grid-cols-12 gap-6">
           <!-- START ABOUT TEXT DESIGN AREA -->
           <div class="col-span-12 sm:col-span-3">
-            <h2 class="about-pre-title">Sobre mi</h2>
+            <h2 class="text-3xl font-bold mb-6">Sobre mí</h2>
           </div>
           <div class="col-span-12 sm:col-span-9">
             <div class="about-content-part wow fadeInUp delay-0-2s max-md:px-0">
-              <p>
-                <strong>Ingeniero en Software</strong>, 
-                especializado en la creación de <strong>soluciones corporativas, escalables y de alto rendimiento</strong>. 
-                Combino una base sólida en <strong>arquitecturas modernas</strong> con una visión centrada en la 
-                <strong>automatización y la Inteligencia Artificial aplicada al desarrollo</strong>.
-                <br><br>
-                Experto en <strong>ingeniería de contexto, diseño de prompts</strong> e integración de 
-                <strong>agentes de IA</strong> (Copilot Agents, Claude Code, Codex CLI, MCP), 
-                incorporando <strong>LLMs</strong> en el ciclo de vida del software para 
-                <strong>optimizar flujos, documentación y procesos críticos</strong>.
-                <br><br>
-                En cada proyecto, busco construir <strong>tecnología inteligente, confiable y alineada con los objetivos del negocio</strong>.
-              </p>
+                 <p class="text-lg leading-relaxed mb-4">
+                  <strong>Analista</strong> e <strong>Ingeniero en Informática</strong> especializado en 
+                  <strong>transformar datos en métricas claras</strong>, <strong>KPIs relevantes</strong> e 
+                  <strong>insights accionables</strong> que impulsan <strong>decisiones estratégicas</strong> 
+                  de alto impacto y generan <strong>valor real en el negocio</strong>.
+                </p>
 
+                <p class="text-lg leading-relaxed mb-4">
+                  Mi enfoque combina <strong>análisis profundo</strong>, <strong>pensamiento crítico</strong> 
+                  y <strong>visión de negocio</strong>, colaborando con <strong>equipos técnicos</strong> 
+                  y <strong>ejecutivos</strong> para asegurar <strong> decisiones informadas</strong>
+                  y alineadas con los objetivos de la organización.
+                </p>
+
+                <p class="text-lg leading-relaxed mb-4">
+                  Actualmente profundizo mis habilidades en <strong>Data Analyst Specialization 
+                  (Microsoft)</strong>, y en paralelo colaboro con empresas en 
+                  <strong>proyectos intersectoriales</strong> que exigen <strong>precisión</strong>, 
+                  <strong>escalabilidad</strong> y <strong>resultados medibles</strong>.
+                </p>
             </div>
             <!-- START COUNTER DESIGN AREA -->
             <div
               class="hero-counter-area wow fadeInUp delay-0-4s flex items-center justify-between"
             >
               <div class="counter-item counter-text-wrap">
-                <span class="count-text plus" data-speed="3000" data-stop="4"
+                <span class="count-text plus" data-speed="3000" data-stop="10"
                   >0</span
                 >
-                <span class="counter-title">Años de Experiencia</span>
+                <span class="counter-title">Proyectos implementados</span>
               </div>
               <div class="counter-item counter-text-wrap">
-                <span class="count-text percent" data-speed="3000" data-stop="60">0</span>
+                <span class="count-text percent" data-speed="3000" data-stop="50">0</span>
                 <span class="counter-title">Eficiencia impulsada por IA</span>
               </div>
               <div class="counter-item counter-text-wrap">
@@ -316,160 +426,75 @@
     </section>
     <!-- / END ABOUT DESIGN AREA -->
     <!-- START TECHNOLOGIES DESIGN AREA -->
-    <section id="technologies" class="services-area">
-      <div class="container">
-        <div class="grid grid-cols-12 gap-6">
-          <div class="col-span-12">
-            <div class="section-title section-black-title wow fadeInUp delay-0-2s">
-              <h2>Tecnologías</h2>
+    <section id="technologies" class="services-area pt-8 md:pt-12">
+  <div class="container">
+    
+    <!-- TÍTULO -->
+    <div class="section-title section-black-title wow fadeInUp delay-0-2s mb-2">
+      <h2>Tecnologías</h2>
+    </div>
 
-            </div>
+    <!-- GRID DE SKILLS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-4">
+
+      <!-- Analisis de datos | Business Intelligence -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-black">Analisis de datos | Business Intelligence</h3>
+
+        <div class="skill-item mb-4">
+          <div class="flex justify-between text-sm font-medium mb-1 text-black">
+            <span>Hojas de Calculo</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar-bg">
+            <div class="skill-bar-fill" style="--level: 85%;"></div>
           </div>
         </div>
-        <div class="tech-grid">
-          <article class="tech-card wow fadeInUp delay-0-2s">
-            <span class="tech-card-eyebrow">Frontend &amp; Mobile</span>
-            <ul class="tech-list">
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/react.svg" alt="React logo" loading="lazy" />
-                </span>
-                <span class="tech-name">React</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/angular.svg" alt="Angular logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Angular</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/react-native.svg" alt="React Native logo" loading="lazy" />
-                </span>
-                <span class="tech-name">React Native</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/typescript.svg" alt="TypeScript logo" loading="lazy" />
-                </span>
-                <span class="tech-name">TypeScript</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/tailwindcss.svg" alt="Tailwind CSS logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Tailwind CSS</span>
-              </li>
-            </ul>
-          </article>
-          <article class="tech-card wow fadeInUp delay-0-4s">
-            <span class="tech-card-eyebrow">Backend &amp; Data</span>
-            <ul class="tech-list">
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/java.svg" alt="Java logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Java</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/springboot.svg" alt="Spring Boot logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Spring Boot</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/postgresql.svg" alt="PostgreSQL logo" loading="lazy" />
-                </span>
-                <span class="tech-name">PostgreSQL</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/oracle.svg" alt="Oracle Database logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Oracle SQL</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/supabase.svg" alt="Supabase logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Supabase</span>
-              </li>
-            </ul>
-          </article>
-          <article class="tech-card wow fadeInUp delay-0-6s">
-            <span class="tech-card-eyebrow">Cloud &amp; DevOps</span>
-            <ul class="tech-list">
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/googlecloud.svg" alt="Google Cloud logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Google Cloud</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/amazonaws.svg" alt="AWS logo" loading="lazy" />
-                </span>
-                <span class="tech-name">AWS</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/microsoftazure.svg" alt="Azure logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Azure</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/docker.svg" alt="Docker logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Docker</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/sonarqube.svg" alt="SonarQube logo" loading="lazy" />
-                </span>
-                <span class="tech-name">SonarQube</span>
-              </li>
-            </ul>
-          </article>
-          <article class="tech-card wow fadeInUp delay-0-8s">
-            <span class="tech-card-eyebrow">IA &amp; Automatización</span>
-            <ul class="tech-list">
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/githubcopilot.svg" alt="GitHub Copilot logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Copilot Agents</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/anthropic.svg" alt="Anthropic logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Claude Code</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/openai.svg" alt="OpenAI logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Codex CLI &amp; LLM Ops</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/n8n.svg" alt="n8n logo" loading="lazy" />
-                </span>
-                <span class="tech-name">Automatización con n8n</span>
-              </li>
-              <li class="tech-list-item">
-                <span class="tech-icon">
-                  <img src="./assets/images/tech/github.svg" alt="GitHub logo" loading="lazy" />
-                </span>
-                <span class="tech-name">MCP Workflows</span>
-              </li>
-            </ul>
-          </article>
+
+        <div class="flex justify-between text-sm font-medium mb-1 text-black">
+  <span>Hojas de calculo | Google Sheets & Excel</span>
+  <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-xs">
+    Avanzado
+  </span>
+</div>
+        <div class="flex justify-between text-sm font-medium mb-1 text-black">
+  <span>Power BI</span>
+  <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-xs">
+    Intermedio
+  </span>
+</div>
+
+      </div>
+
+      <!-- BACKEND & DATA -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-black">Backend & Data</h3>
+
+        <div class="skill-item mb-4">
+          <div class="flex justify-between text-sm font-medium mb-1 text-black">
+            <span>Java</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar-bg">
+            <div class="skill-bar-fill" style="--level: 85%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item mb-4">
+          <div class="flex justify-between text-sm font-medium mb-1 text-black">
+            <span>PostgreSQL</span>
+            <span>80%</span>
+          </div>
+          <div class="skill-bar-bg">
+            <div class="skill-bar-fill" style="--level: 80%;"></div>
+          </div>
         </div>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
+
     <!-- / END TECHNOLOGIES DESIGN AREA -->
 
     <!-- START PORTFOLIO DESIGN AREA -->
@@ -672,33 +697,24 @@
                   <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
                     <img src="./assets/images/client-logos/duoc.png" alt="Duoc UC" class="w-16 h-16 rounded-full" loading="lazy" />
                     <div class="text-center sm:text-left">
-                      <h4 class="font-semibold text-lg text-black">Ingeniero en Desarrollo de Software</h4>
-                      <p class="text-xs text-gray-500 mt-1">Duoc UC · 2025</p>
+                      <h4 class="font-semibold text-lg text-black">Ingeniería en Informática </h4>
+                      <p class="text-xs text-gray-500 mt-1">Duoc UC · 2021 - 2023</p>
                     </div>
                   </div>
                 </div>
 
+                
                 <!-- Card 2 -->
                 <div class="edu-card bg-white rounded-lg p-4 shadow-sm border border-gray-200">
                   <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
                     <img src="./assets/images/client-logos/duoc.png" alt="Duoc UC" class="w-16 h-16 rounded-full" loading="lazy" />
                     <div class="text-center sm:text-left">
                       <h4 class="font-semibold text-lg text-black">Analista Programador Computacional</h4>
-                      <p class="text-xs text-gray-500 mt-1">Duoc UC · 2021 — 2023</p>
+                      <p class="text-xs text-gray-500 mt-1">Duoc UC · 2018 — 2020</p>
                     </div>
                   </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="edu-card bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-                  <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
-                    <img src="./assets/images/client-logos/duoc.png" alt="Duoc UC" class="w-16 h-16 rounded-full" loading="lazy" />
-                    <div class="text-center sm:text-left">
-                      <h4 class="font-semibold text-lg text-black">Ingeniero en Mecánica automotriz y autotrónica</h4>
-                      <p class="text-xs text-gray-500 mt-1">Duoc UC · 2014 — 2019</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </article>
           </div>
