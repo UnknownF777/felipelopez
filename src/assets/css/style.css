@@ -154,6 +154,40 @@
 }
 
 
+.logo-anim{
+  transition: transform .25s ease, filter .25s ease;
+  will-change: transform;
+}
+
+.logo-anim:hover{
+  transform: translateY(-2px) scale(1.03);
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.18));
+}
+
+.skill-bar-bg{
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(0,0,0,.08);
+  overflow: hidden;
+}
+.skill-bar-fill{
+  height: 100%;
+  width: 0;                  /* para animación */
+  border-radius: 9999px;
+  background: #2563eb;        /* blue-600 */
+  transition: width 900ms ease;
+}
+.chip{
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: .35rem .6rem;
+  font-size: .75rem;
+  line-height: 1rem;
+  background: rgba(0,0,0,.05);
+  color: rgba(0,0,0,.75);
+}
+
 
 
 /*fin del codigo prueba*/
@@ -615,21 +649,29 @@
   }
 
   /* Logo */
-  .logo img {
-    /* Tamaños reducidos y responsivos */
-    @apply w-[80px] sm:w-[100px] md:w-[120px] lg:w-[140px] max-w-full h-auto transition-all duration-300;
-  }
-
-  /* Aumentar con mayor especificidad para asegurar que se aplique en el header */
-  .main-header .logo img {
-    @apply w-[80px] sm:w-[100px] md:w-[120px] lg:w-[140px] max-w-full h-auto transition-all duration-300;
-  }
-
-  /* Regla de alta especificidad final para asegurar tamaño del logo */
- header.main-header .header-upper .header-inner .logo-area .logo img {
-    max-width: 120px !important;  /* <-- tamaño ideal */
+ /* LOGO: tamaño navbar (controlado) */
+.main-header .logo img{
+  width: 180px;      /* antes 260px */
+  height: auto;
+  max-width: none;
+  transition: transform .25s ease, filter .25s ease;
 }
 
+@media (min-width: 640px){   /* sm */
+  .main-header .logo img{ width: 200px; }
+}
+
+@media (min-width: 768px){   /* md */
+  .main-header .logo img{ width: 220px; }
+}
+
+@media (min-width: 1024px){  /* lg */
+  .main-header .logo img{ width: 240px; }
+}
+
+
+
+ 
 
   /* Main Menu */
   .main-menu {
