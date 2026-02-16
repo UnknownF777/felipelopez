@@ -499,3 +499,59 @@ document.addEventListener("DOMContentLoaded", function () {
   observer.observe(techSection);
 });
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".exp-card");
+  if (!cards.length) return;
+
+  // Stagger automático (0ms, 90ms, 180ms...)
+  cards.forEach((c, i) => c.style.setProperty("--d", `${i * 90}ms`));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("is-visible");
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.18 });
+
+  cards.forEach((c) => io.observe(c));
+
+  // Hover premium: spotlight + tilt suave
+  let raf = null;
+
+  cards.forEach((card) => {
+    const onMove = (ev) => {
+      const r = card.getBoundingClientRect();
+      const x = ((ev.clientX - r.left) / r.width) * 100;
+      const y = ((ev.clientY - r.top) / r.height) * 100;
+
+      // Tilt muy leve (ajusta si quieres)
+      const ry = ((x - 50) / 50) * 2;     // -2..2 deg
+      const rx = -((y - 50) / 50) * 1.5;  // -1.5..1.5 deg
+
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        card.style.setProperty("--mx", `${x}%`);
+        card.style.setProperty("--my", `${y}%`);
+        card.style.setProperty("--rx", `${rx}deg`);
+        card.style.setProperty("--ry", `${ry}deg`);
+      });
+    };
+
+    const reset = () => {
+      card.style.setProperty("--mx", `50%`);
+      card.style.setProperty("--my", `35%`);
+      card.style.setProperty("--rx", `0deg`);
+      card.style.setProperty("--ry", `0deg`);
+    };
+
+    card.addEventListener("mouseenter", reset);
+    card.addEventListener("mousemove", onMove);
+    card.addEventListener("mouseleave", reset);
+  });
+});
+

@@ -188,6 +188,285 @@
   color: rgba(0,0,0,.75);
 }
 
+/* ===== Barra base (si ya tienes, solo agrega lo nuevo) ===== */
+.skill-bar-bg{
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(0,0,0,.08);
+  overflow: hidden;
+  position: relative;
+}
+
+/* En tu sistema, esto se anima por JS (IntersectionObserver) */
+.skill-bar-fill{
+  height: 100%;
+  width: 0;
+  border-radius: 9999px;
+  transition: width 900ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Variante verde (Full Stack) ===== */
+.skill-bar-fill.is-bi{
+  background: #059669; /* emerald-600 */
+}
+
+/* "Efervescencia": burbujas dentro de la barra */
+/* ===== Efervescencia natural (sin salto) ===== */
+.skill-bar-fill.is-bi::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.8;
+
+  /* 2 capas de burbujas con tamaños distintos */
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.95) 0 2px, transparent 2.6px),
+    radial-gradient(circle, rgba(255,255,255,.70) 0 1.4px, transparent 1.9px);
+
+  background-repeat: repeat;
+  background-size: 22px 16px, 16px 12px;
+
+
+  /* posiciones iniciales (diferentes para que no “sincronicen”) */
+  background-position: 0 120%, 12px 160%;
+
+  /* clave: animar background-position (flujo continuo) */
+  animation: bubblesRise 5s linear infinite;
+
+
+
+}
+/* brillo superior sutil */
+.skill-bar-fill.is-dev::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.28;
+  background: linear-gradient(to bottom, rgba(255,255,255,.55), transparent 55%);
+}
+/* Subida CONTINUA: el patrón sigue, no “reinicia” con salto visible */
+@keyframes bubblesRise{
+  0%{
+    background-position: 0 120%, 12px 160%;
+  }
+  100%{
+    background-position: 0 -72px, 12px -32px;
+  }
+}
+
+
+/* Respeta accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .skill-bar-fill, .skill-bar-fill.is-dev::before{
+    transition: none;
+    animation: none;
+  }
+}
+
+.skill-bar-fill.is-dev::before{
+
+  content:"";
+  position:absolute; inset:0;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255,255,255,.25) 0 10px,
+    rgba(255,255,255,0) 10px 20px
+  );
+  background-size: 28px 28px;
+  animation: stripes 1.2s linear infinite;
+  opacity:.7;
+  pointer-events:none;
+}
+
+@keyframes stripes{
+  0%   { background-position: 0 0; }
+  100% { background-position: 28px 0; }
+}
+
+
+/* ===== Título animado pro (underline + shimmer) ===== */
+.section-title{
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px; /* espacio para la línea */
+}
+
+/* Línea que se dibuja */
+.section-title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  height:4px;
+  width:100%;
+  border-radius:999px;
+
+  /* color sutil (ajusta si quieres más/menos contraste) */
+  background: linear-gradient(90deg, currentColor 0%, rgba(255,255,255,.0) 110%);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: titleUnderline 900ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+/* Brillito que cruza cada cierto tiempo */
+.section-title::before{
+  content:"";
+  position:absolute;
+  left:-20%;
+  bottom:0;
+  height:4px;
+  width:25%;
+  border-radius:999px;
+  background: rgba(255,255,255,.55);
+  filter: blur(.2px);
+  opacity:.0;
+
+  animation: titleShimmer 3.2s ease-in-out 1.1s infinite;
+}
+
+@keyframes titleUnderline{
+  to{ transform: scaleX(1); }
+}
+
+@keyframes titleShimmer{
+  0%, 55% { transform: translateX(0); opacity: 0; }
+  65%     { opacity: .55; }
+  85%     { transform: translateX(520%); opacity: 0; }
+  100%    { opacity: 0; }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .section-title::after,
+  .section-title::before{
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ===== Experience card: premium hover (sin “pintar” el fondo) ===== */
+.exp-card{
+  /* Colores del acento (RGB sin comas) -> puedes cambiarlos por card */
+  --acc1: 59 130 246; /* blue */
+  --acc2: 16 185 129; /* emerald */
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+
+  /* Fuerza fondo blanco (por si .testimonial-item mete fondo propio) */
+  background: rgba(255,255,255,.94) !important;
+
+  border: 1px solid rgba(17,24,39,.08);
+  box-shadow: 0 10px 28px rgba(17,24,39,.06);
+
+  transform: translateY(12px);
+  opacity: 0;
+
+  transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    opacity .35s ease,
+    box-shadow .45s ease,
+    border-color .45s ease;
+  will-change: transform;
+}
+
+/* Asegura que el contenido quede SIEMPRE arriba de los efectos */
+.exp-card > *{
+  position: relative;
+  z-index: 2;
+}
+
+/* Glow suave, detrás */
+.exp-card::before{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(var(--acc1),.18), transparent 55%),
+    radial-gradient(circle at 88% 0%, rgba(var(--acc2),.14), transparent 60%);
+  filter: blur(22px);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .45s ease, transform .45s ease;
+  pointer-events:none;
+  z-index: 0;
+}
+
+/* Ring degradado (borde), NO pinta el fondo */
+.exp-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  padding:1px;
+  border-radius:inherit;
+  background: linear-gradient(120deg,
+     rgba(var(--acc1),.55),
+     rgba(var(--acc2),.45),
+     rgba(var(--acc1),.25)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .45s ease;
+  pointer-events:none;
+  z-index: 1;
+}
+
+/* Entrada por scroll (IntersectionObserver) */
+.exp-card.is-visible{
+  opacity:1;
+  transform: translateY(0);
+  transition-delay: var(--d, 0ms);
+}
+
+.exp-card:hover{
+  transform: translateY(-8px);
+  border-color: rgba(var(--acc1), .22);
+  box-shadow: 0 20px 52px rgba(17,24,39,.12);
+}
+.exp-card:hover::before{ opacity:1; transform: translateY(0); }
+.exp-card:hover::after{ opacity:1; }
+
+/* ---- Shine (opcional, requiere 1 línea HTML) ---- */
+.exp-card .exp-shine{
+  position:absolute;
+  inset:-40%;
+  background: linear-gradient(120deg,
+    transparent 45%,
+    rgba(255,255,255,.55) 50%,
+    transparent 55%
+  );
+  transform: translateX(-35%) rotate(10deg);
+  opacity: 0;
+  pointer-events:none;
+  z-index: 1;
+}
+.exp-card:hover .exp-shine{
+  opacity: .9;
+  animation: expShine 1.1s ease forwards;
+}
+@keyframes expShine{
+  to{ transform: translateX(35%) rotate(10deg); }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .exp-card, .exp-card::before, .exp-card::after, .exp-card .exp-shine{
+    transition: none !important;
+    animation: none !important;
+  }
+  .exp-card{ transform:none !important; opacity:1 !important; }
+}
+
+
+
 
 
 /*fin del codigo prueba*/

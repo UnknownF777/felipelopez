@@ -364,7 +364,8 @@
         <div class="grid grid-cols-12 gap-6">
           <!-- START ABOUT TEXT DESIGN AREA -->
           <div class="col-span-12 sm:col-span-3">
-            <h2 class="text-3xl font-bold mb-6">Sobre mí</h2>
+            <h2 class="text-3xl font-bold mb-6 section-title">Sobre mí</h2>
+
           </div>
           <div class="col-span-12 sm:col-span-9">
             <div class="about-content-part wow fadeInUp delay-0-2s max-md:px-0">
@@ -431,13 +432,113 @@
 
     <!-- GRID DE SKILLS -->
     <!-- GRID DE SKILLS -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-4 relative
+            md:before:content-[''] md:before:absolute md:before:top-0 md:before:bottom-0
+            md:before:left-1/2 md:before:w-px md:before:bg-black/10">
+
 
   <!-- Analisis de datos | Business Intelligence -->
   <div>
-    <h3 class="text-xl font-bold mb-4 text-black">Análisis de datos | Business Intelligence</h3>
+    <div class="flex items-center gap-3 mb-6">
+  <div class="h-10 w-10 rounded-2xl bg-emerald-600/10 flex items-center justify-center">
+    <svg class="h-5 w-5 text-emerald-700" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 3a1 1 0 0 1 1 1v12h12a1 1 0 1 1 0 2H4a2 2 0 0 1-2-2V4a1 1 0 0 1 1-1z"/>
+      <path d="M7 13a1 1 0 0 1-1-1V8a1 1 0 1 1 2 0v4a1 1 0 0 1-1 1zM11 13a1 1 0 0 1-1-1V6a1 1 0 1 1 2 0v6a1 1 0 0 1-1 1zM15 13a1 1 0 0 1-1-1V9a1 1 0 1 1 2 0v3a1 1 0 0 1-1 1z"/>
+    </svg>
+  </div>
+
+  <div>
+    <p class="text-xs uppercase tracking-widest text-black/60">Business Intelligence</p>
+    <h3 class="text-xl md:text-2xl font-extrabold text-black leading-tight">
+      Análisis de datos
+    </h3>
+  </div>
+</div>
+
 
     <div class="space-y-4">
+
+      <!-- Hojas de cálculo (Google Sheets / Excel) -->
+    <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
+      <header class="flex items-start justify-between gap-4">
+        <div>
+          <h4 class="text-base font-semibold text-black">Google Sheets · Excel</h4>
+          <p class="text-sm text-black/70">
+            Análisis rápido, reporting y control de datos operativos.
+          </p>
+        </div>
+        <span class="inline-flex items-center rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+          Avanzado
+        </span>
+      </header>
+
+      <div class="mt-3">
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill is-bi" style="--level: 95%"></div>
+        </div>
+      </div>
+
+      <details class="group mt-4">
+        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-emerald-700 hover:text-emerald-800">
+          <span class="group-open:hidden">Ver lo que hago</span>
+          <span class="hidden group-open:inline">Ocultar</span>
+          <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z" clip-rule="evenodd"/>
+          </svg>
+        </summary>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip">Tablas dinámicas + segmentación</span>
+          <span class="chip">Fórmulas avanzadas (LOOKUP/INDEX, IF, ARRAY)</span>
+          <span class="chip">Validación de datos + controles</span>
+          <span class="chip">Dashboards en hoja (KPI + tendencias)</span>
+          <span class="chip">Limpieza + estandarización</span>
+          <span class="chip">Documentación y handoff</span>
+        </div>
+      </details>
+    </article>
+
+     <!-- SQL -->
+    <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
+      <header class="flex items-start justify-between gap-4">
+        <div>
+          <h4 class="text-base font-semibold text-black">SQL</h4>
+          <p class="text-sm text-black/70">
+            Extracción, análisis y modelado para reporting y BI.
+          </p>
+        </div>
+        <span class="inline-flex items-center rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+          Avanzado
+        </span>
+      </header>
+
+      <div class="mt-3">
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill is-bi" style="--level: 90%"></div>
+        </div>
+      </div>
+
+      <details class="group mt-4">
+        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-emerald-700 hover:text-emerald-800">
+          <span class="group-open:hidden">Ver lo que hago</span>
+          <span class="hidden group-open:inline">Ocultar</span>
+          <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z" clip-rule="evenodd"/>
+          </svg>
+        </summary>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip">JOINs + subqueries</span>
+          <span class="chip">CTEs + window functions</span>
+          <span class="chip">Agregaciones y KPIs</span>
+          <span class="chip">Modelado relacional (normalización)</span>
+          <span class="chip">Índices + performance básico</span>
+          <span class="chip">Data quality checks</span>
+          <span class="chip">Microsoft SQL Server</span>
+          <span class="chip">BigQuery</span>
+        </div>
+      </details>
+    </article>
 
       <!-- Power BI -->
       <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
@@ -448,19 +549,20 @@
               Modelado, DAX y dashboards ejecutivos orientados a KPI.
             </p>
           </div>
-          <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
+          <span class="inline-flex items-center rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
             Intermedio / Avanzado
           </span>
         </header>
 
         <div class="mt-3">
           <div class="skill-bar-bg">
-            <div class="skill-bar-fill" style="--level: 80%"></div>
+            <div class="skill-bar-fill is-bi" style="--level: 85%"></div>
+
           </div>
         </div>
 
         <details class="group mt-4">
-          <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
+          <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-emerald-700 hover:text-emerald-800">
             <span class="group-open:hidden">Ver lo que hago</span>
             <span class="hidden group-open:inline">Ocultar</span>
             <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -479,108 +581,34 @@
         </details>
       </article>
 
-       <!-- SQL -->
+
+      <!-- Python -->
     <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
+      
+
       <header class="flex items-start justify-between gap-4">
-        <div>
-          <h4 class="text-base font-semibold text-black">SQL</h4>
-          <p class="text-sm text-black/70">
-            Extracción, análisis y modelado para reporting y BI.
-          </p>
-        </div>
-        <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
-          Intermedio / Avanzado
-        </span>
-      </header>
+  <div class="min-w-0">
+    <h4 class="text-base font-semibold text-black">
+     Python
+    </h4>
+    <p class="text-sm text-black/70">
+      Automatización y análisis para acelerar reporting y procesos.
+    </p>
+  </div>
+
+  <span class="inline-flex shrink-0 self-start items-center rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+    Intermedio / Avanzado
+  </span>
+</header>
 
       <div class="mt-3">
         <div class="skill-bar-bg">
-          <div class="skill-bar-fill" style="--level: 78%"></div>
+          <div class="skill-bar-fill is-bi" style="--level: 85%"></div>
         </div>
       </div>
 
       <details class="group mt-4">
-        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
-          <span class="group-open:hidden">Ver lo que hago</span>
-          <span class="hidden group-open:inline">Ocultar</span>
-          <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z" clip-rule="evenodd"/>
-          </svg>
-        </summary>
-
-        <div class="mt-3 flex flex-wrap gap-2">
-          <span class="chip">JOINs + subqueries</span>
-          <span class="chip">CTEs + window functions</span>
-          <span class="chip">Agregaciones y KPIs</span>
-          <span class="chip">Modelado relacional (normalización)</span>
-          <span class="chip">Índices + performance básico</span>
-          <span class="chip">Data quality checks</span>
-        </div>
-      </details>
-    </article>
-
-    <!-- BigQuery -->
-    <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
-      <header class="flex items-start justify-between gap-4">
-        <div>
-          <h4 class="text-base font-semibold text-black">BigQuery</h4>
-          <p class="text-sm text-black/70">
-            Analítica en la nube para datasets grandes y consultas escalables.
-          </p>
-        </div>
-        <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
-          Intermedio
-        </span>
-      </header>
-
-      <div class="mt-3">
-        <div class="skill-bar-bg">
-          <div class="skill-bar-fill" style="--level: 70%"></div>
-        </div>
-      </div>
-
-      <details class="group mt-4">
-        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
-          <span class="group-open:hidden">Ver lo que hago</span>
-          <span class="hidden group-open:inline">Ocultar</span>
-          <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z" clip-rule="evenodd"/>
-          </svg>
-        </summary>
-
-        <div class="mt-3 flex flex-wrap gap-2">
-          <span class="chip">SQL estándar + funciones analíticas</span>
-          <span class="chip">Particionado + clustering</span>
-          <span class="chip">Optimización de costos (bytes procesados)</span>
-          <span class="chip">Vistas + tablas derivadas</span>
-          <span class="chip">Data marts para BI</span>
-          <span class="chip">Export/Integración con reporting</span>
-        </div>
-      </details>
-    </article>
-
-    <!-- Python -->
-    <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
-      <header class="flex items-start justify-between gap-4">
-        <div>
-          <h4 class="text-base font-semibold text-black">Python</h4>
-          <p class="text-sm text-black/70">
-            Automatización y análisis para acelerar reporting y procesos.
-          </p>
-        </div>
-        <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
-          Intermedio
-        </span>
-      </header>
-
-      <div class="mt-3">
-        <div class="skill-bar-bg">
-          <div class="skill-bar-fill" style="--level: 68%"></div>
-        </div>
-      </div>
-
-      <details class="group mt-4">
-        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
+        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-emerald-700 hover:text-emerald-800">
           <span class="group-open:hidden">Ver lo que hago</span>
           <span class="hidden group-open:inline">Ocultar</span>
           <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -601,86 +629,6 @@
       </details>
     </article>
 
-    <!-- Tableau -->
-    <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
-      <header class="flex items-start justify-between gap-4">
-        <div>
-          <h4 class="text-base font-semibold text-black">Tableau</h4>
-          <p class="text-sm text-black/70">
-            Storytelling visual para decisiones (dashboards y análisis exploratorio).
-          </p>
-        </div>
-        <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
-          Intermedio
-        </span>
-      </header>
-
-      <div class="mt-3">
-        <div class="skill-bar-bg">
-          <div class="skill-bar-fill" style="--level: 60%"></div>
-        </div>
-      </div>
-
-      <details class="group mt-4">
-        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
-          <span class="group-open:hidden">Ver lo que hago</span>
-          <span class="hidden group-open:inline">Ocultar</span>
-          <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z" clip-rule="evenodd"/>
-          </svg>
-        </summary>
-
-        <div class="mt-3 flex flex-wrap gap-2">
-          <span class="chip">Dashboards + filtros interactivos</span>
-          <span class="chip">Calculated fields</span>
-          <span class="chip">Parámetros + acciones</span>
-          <span class="chip">Story points (narrativa)</span>
-          <span class="chip">Buenas prácticas de diseño BI</span>
-          <span class="chip">Conexión a fuentes SQL</span>
-        </div>
-      </details>
-    </article>
-
-    <!-- Hojas de cálculo (Google Sheets / Excel) -->
-    <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
-      <header class="flex items-start justify-between gap-4">
-        <div>
-          <h4 class="text-base font-semibold text-black">Google Sheets / Excel</h4>
-          <p class="text-sm text-black/70">
-            Análisis rápido, reporting y control de datos operativos.
-          </p>
-        </div>
-        <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
-          Avanzado
-        </span>
-      </header>
-
-      <div class="mt-3">
-        <div class="skill-bar-bg">
-          <div class="skill-bar-fill" style="--level: 90%"></div>
-        </div>
-      </div>
-
-      <details class="group mt-4">
-        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
-          <span class="group-open:hidden">Ver lo que hago</span>
-          <span class="hidden group-open:inline">Ocultar</span>
-          <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z" clip-rule="evenodd"/>
-          </svg>
-        </summary>
-
-        <div class="mt-3 flex flex-wrap gap-2">
-          <span class="chip">Tablas dinámicas + segmentación</span>
-          <span class="chip">Fórmulas avanzadas (LOOKUP/INDEX, IF, ARRAY)</span>
-          <span class="chip">Validación de datos + controles</span>
-          <span class="chip">Dashboards en hoja (KPI + tendencias)</span>
-          <span class="chip">Limpieza + estandarización</span>
-          <span class="chip">Documentación y handoff</span>
-        </div>
-      </details>
-    </article>
-
     <!-- R -->
     <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
       <header class="flex items-start justify-between gap-4">
@@ -690,19 +638,19 @@
             Análisis estadístico y exploración para insights.
           </p>
         </div>
-        <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
-          Intermedio
+        <span class="inline-flex items-center rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+          Intermedio / Avanzado
         </span>
       </header>
 
       <div class="mt-3">
         <div class="skill-bar-bg">
-          <div class="skill-bar-fill" style="--level: 55%"></div>
+          <div class="skill-bar-fill is-bi" style="--level: 80%"></div>
         </div>
       </div>
 
       <details class="group mt-4">
-        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
+        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-emerald-700 hover:text-emerald-800">
           <span class="group-open:hidden">Ver lo que hago</span>
           <span class="hidden group-open:inline">Ocultar</span>
           <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -721,94 +669,310 @@
       </details>
     </article>
 
+
+  
+
+    <!-- Tableau -->
+    <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
+      <header class="flex items-start justify-between gap-4">
+        <div>
+          <h4 class="text-base font-semibold text-black">Tableau</h4>
+          <p class="text-sm text-black/70">
+            Storytelling visual para decisiones (dashboards y análisis exploratorio).
+          </p>
+        </div>
+        <span class="inline-flex items-center rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+          Intermedio
+        </span>
+      </header>
+
+      <div class="mt-3">
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill is-bi" style="--level: 70%"></div>
+        </div>
+      </div>
+
+      <details class="group mt-4">
+        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-emerald-700 hover:text-emerald-800">
+          <span class="group-open:hidden">Ver lo que hago</span>
+          <span class="hidden group-open:inline">Ocultar</span>
+          <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z" clip-rule="evenodd"/>
+          </svg>
+        </summary>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip">Dashboards + filtros interactivos</span>
+          <span class="chip">Calculated fields</span>
+          <span class="chip">Parámetros + acciones</span>
+          <span class="chip">Story points (narrativa)</span>
+          <span class="chip">Buenas prácticas de diseño BI</span>
+          <span class="chip">Conexión a fuentes SQL</span>
+        </div>
+      </details>
+    </article>
+
+
+    
+
   </div>
 </div>
 
-  <!-- Backend & Data -->
+  <!-- Programacion -->
   <div>
-    <h3 class="text-xl font-bold mb-4 text-black">Backend & Data</h3>
+    <div class="flex items-center gap-3 mb-6">
+  <div class="h-10 w-10 rounded-2xl bg-blue-600/10 flex items-center justify-center">
+    <!-- icono code -->
+   <svg class="h-5 w-5 text-blue-700" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M16 18l6-6-6-6"/>
+  <path d="M8 6l-6 6 6 6"/>
+  <path d="M14 4l-4 16"/>
+</svg>
+
+  </div>
+
+  <div>
+    <p class="text-xs uppercase tracking-widest text-black/60">Development</p>
+    <h3 class="text-xl md:text-2xl font-extrabold text-black leading-tight">
+      Programación 
+    </h3>
+  </div>
+</div>
+
+
 
     <div class="space-y-4">
 
-      <!-- SQL / PostgreSQL -->
-      <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
-        <header class="flex items-start justify-between gap-4">
-          <div>
-            <h4 class="text-base font-semibold text-black">SQL (PostgreSQL)</h4>
-            <p class="text-sm text-black/70">
-              Consultas analíticas, modelado y optimización.
-            </p>
-          </div>
-          <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
-            Intermedio
-          </span>
-        </header>
-
-        <div class="mt-3">
-          <div class="skill-bar-bg">
-            <div class="skill-bar-fill" style="--level: 75%"></div>
-          </div>
-        </div>
-
-        <details class="group mt-4">
-          <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
-            <span class="group-open:hidden">Ver lo que hago</span>
-            <span class="hidden group-open:inline">Ocultar</span>
-            <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z" clip-rule="evenodd"/>
-            </svg>
-          </summary>
-
-          <div class="mt-3 flex flex-wrap gap-2">
-            <span class="chip">JOINs + subqueries</span>
-            <span class="chip">CTEs + window functions</span>
-            <span class="chip">Modelado relacional (normalización)</span>
-            <span class="chip">Índices + análisis básico de performance</span>
-            <span class="chip">Data quality checks</span>
-          </div>
-        </details>
-      </article>
-
-      <!-- Java -->
-      <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
-        <header class="flex items-start justify-between gap-4">
-          <div>
-            <h4 class="text-base font-semibold text-black">Java</h4>
-            <p class="text-sm text-black/70">
-              Backend básico, POO y acceso a datos.
-            </p>
-          </div>
-          <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
-            Intermedio
-          </span>
-        </header>
-
-        <div class="mt-3">
-          <div class="skill-bar-bg">
-            <div class="skill-bar-fill" style="--level: 70%"></div>
-          </div>
-        </div>
-
-        <details class="group mt-4">
-          <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
-            <span class="group-open:hidden">Ver lo que hago</span>
-            <span class="hidden group-open:inline">Ocultar</span>
-            <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z" clip-rule="evenodd"/>
-            </svg>
-          </summary>
-
-          <div class="mt-3 flex flex-wrap gap-2">
-            <span class="chip">POO + buenas prácticas</span>
-            <span class="chip">JDBC + CRUD</span>
-            <span class="chip">Estructuras de datos</span>
-            <span class="chip">Validaciones + manejo de errores</span>
-            <span class="chip">APIs REST (si aplica)</span>
-          </div>
-        </details>
-      </article>
-
+      <!-- Arquitectura -->
+<article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
+  <header class="flex items-start justify-between gap-4">
+    <div>
+      <h4 class="text-base font-semibold text-black">Arquitectura (Clean Code · Patterns)</h4>
+      <p class="text-sm text-black/70">
+        Código mantenible: estructura por capas, patrones y buenas prácticas.
+      </p>
     </div>
+
+    <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
+      Avanzado
+    </span>
+  </header>
+
+  <div class="mt-3">
+    <div class="skill-bar-bg">
+      <div class="skill-bar-fill is-dev" style="--level: 95%"></div>
+    </div>
+  </div>
+
+  <details class="group mt-4">
+    <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
+      <span class="group-open:hidden">Ver lo que hago</span>
+      <span class="hidden group-open:inline">Ocultar</span>
+      <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z" clip-rule="evenodd"></path>
+      </svg>
+    </summary>
+
+    <div class="mt-3 flex flex-wrap gap-2">
+      <span class="chip">Clean Code</span>
+      <span class="chip">SOLID (aplicado)</span>
+      <span class="chip">Capas: controllers/services</span>
+      <span class="chip">DTOs + validation</span>
+      <span class="chip">Error handling</span>
+      <span class="chip">Config + .env</span>
+      <span class="chip">README</span>
+    </div>
+  </details>
+</article>
+
+<!-- Frontend (HTML/CSS/JS) -->
+    <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
+      <header class="flex items-start justify-between gap-4">
+        <div class="min-w-0">
+          <h4 class="text-base font-semibold text-black">
+            Frontend (HTML · CSS · JavaScript)
+          </h4>
+          <p class="text-sm text-black/70">
+            UI responsive, semántica, accesibilidad y manipulación del DOM; integración básica con APIs.
+          </p>
+        </div>
+        <span class="inline-flex shrink-0 self-start items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
+          Avanzado
+        </span>
+      </header>
+
+      
+
+      <div class="mt-3">
+        <div class="skill-bar-bg">
+          <div class="skill-bar-fill is-dev" style="--level: 95%"></div>
+        </div>
+      </div>
+
+      <details class="group mt-4">
+        <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
+          <span class="group-open:hidden">Ver lo que hago</span>
+          <span class="hidden group-open:inline">Ocultar</span>
+          <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" clip-rule="evenodd"/>
+          </svg>
+        </summary>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip">Layouts responsive (Flex/Grid)</span>
+          <span class="chip">HTML semántico + accesibilidad</span>
+          <span class="chip">CSS: componentes y estilos reutilizables</span>
+          <span class="chip">Tailwind: utilidades y consistencia visual</span>
+          <span class="chip">Bootstrap: Maquetación rápida con componentes predefinidos.</span>
+          <span class="chip">JS: DOM, eventos, async/await</span>
+          <span class="chip">Fetch + integración básica con APIs</span>
+        </div>
+      </details>
+    </article>
+
+
+    <!-- SQL (MySQL / PostgreSQL) -->
+  <article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
+    <header class="flex items-start justify-between gap-4">
+      <div>
+        <h4 class="text-base font-semibold text-black">SQL (Oracle · SQL Server · MySQL · PostgreSQL)</h4>
+        <p class="text-sm text-black/70">Consultas, modelado y optimización básica.</p>
+      </div>
+      <span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">Avanzado</span>
+    </header>
+
+    <div class="mt-3">
+      <div class="skill-bar-bg"><div class="skill-bar-fill is-dev" style="--level: 90%"></div></div>
+    </div>
+
+    <details class="group mt-4">
+      <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
+        <span class="group-open:hidden">Ver lo que hago</span>
+        <span class="hidden group-open:inline">Ocultar</span>
+        <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08Z" clip-rule="evenodd"/>
+        </svg>
+      </summary>
+
+      <div class="mt-3 flex flex-wrap gap-2">
+        <span class="chip">JOINs + agregaciones</span>
+        <span class="chip">CTEs / subqueries</span>
+        <span class="chip">Índices + performance básico</span>
+        <span class="chip">Modelo relacional</span>
+        <span class="chip">Data integrity</span>
+        <span class="chip">Buenas prácticas</span>
+      </div>
+    </details>
+  </article>
+
+  
+
+  <!-- React -->
+<article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
+
+<header class="flex items-start justify-between gap-4">
+  <div class="min-w-0">
+    <h4 class="text-base font-semibold text-black">
+      Frontend (React · Ecosistema)
+    </h4>
+    <p class="text-sm text-black/70">
+      SPAs en producción: componentes, estado, routing, consumo de APIs y performance.
+    </p>
+  </div>
+
+  <span class="inline-flex shrink-0 self-start items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
+    Intermedio / Avanzado
+  </span>
+</header>
+
+
+
+  <div class="mt-3">
+    <div class="skill-bar-bg">
+      <div class="skill-bar-fill is-dev" style="--level: 80%"></div>
+    </div>
+  </div>
+
+  <details class="group mt-4">
+    <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
+      <span class="group-open:hidden">Ver lo que hago</span>
+      <span class="hidden group-open:inline">Ocultar</span>
+      <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" clip-rule="evenodd"/>
+      </svg>
+    </summary>
+
+    <div class="mt-3 flex flex-wrap gap-2">
+      <span class="chip">Componentes + props</span>
+      <span class="chip">State + hooks</span>
+      <span class="chip">Routing (React Router)</span>
+      <span class="chip">Forms + validation</span>
+      <span class="chip">API integration (fetch/axios)</span>
+      <span class="chip">Global state (Context / Redux)</span>
+      <span class="chip">Performance (memo/lazy)</span>
+      <span class="chip">Testing básico (Jest/RTL)</span>
+    </div>
+  </details>
+</article>
+
+
+
+
+  <!-- Java -->
+  <!-- Java Backend (Spring) -->
+<article class="skill-card rounded-2xl border border-black/10 bg-white p-5 shadow-sm hover:shadow-md transition">
+
+
+  <header class="flex items-start justify-between gap-4">
+  <div class="min-w-0">
+    <h4 class="text-base font-semibold text-black">
+      Backend (Java · Spring Boot)
+    </h4>
+    <p class="text-sm text-black/70">
+       APIs REST en producción: Spring MVC, persistencia, seguridad y buenas prácticas.
+    </p>
+  </div>
+
+  <span class="inline-flex shrink-0 self-start items-center rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700">
+    Intermedio / Avanzado
+  </span>
+</header>
+
+
+  <div class="mt-3">
+    <div class="skill-bar-bg">
+      <div class="skill-bar-fill is-dev" style="--level: 80%"></div>
+    </div>
+  </div>
+
+  <details class="group mt-4">
+    <summary class="cursor-pointer list-none flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800">
+      <span class="group-open:hidden">Ver lo que hago</span>
+      <span class="hidden group-open:inline">Ocultar</span>
+      <svg class="ml-1 h-4 w-4 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" clip-rule="evenodd"/>
+      </svg>
+    </summary>
+
+    <div class="mt-3 flex flex-wrap gap-2">
+      <span class="chip">Spring Boot</span>
+      <span class="chip">REST APIs (Spring MVC)</span>
+      <span class="chip">JPA / Hibernate</span>
+      <span class="chip">SQL + transacciones</span>
+      <span class="chip">Validación (Bean Validation)</span>
+      <span class="chip">Spring Security + JWT (si aplica)</span>
+      <span class="chip">Testing (JUnit + Mockito)</span>
+      <span class="chip">Arquitectura service/repository</span>
+    </div>
+  </details>
+</article>
+
+
+  
+</div>
+
+
   </div>
 
 </div>
@@ -921,7 +1085,8 @@
     <!-- START EXPERIENCIA LABORAL DESIGN AREA -->
     <section id="experiencia" class="testimonials-area">
       <div class="container">
-        <div class="gird grid-cols-12">
+        <div class="grid grid-cols-12">
+
           <div class="lg:col-span-12">
             <div
               class="section-title section-black-title wow fadeInUp delay-0-2s"
@@ -930,10 +1095,11 @@
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-12 gap-6 justify-items-center">
-          <div class="col-span-12 md:col-span-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+
+          <div class="w-full">
             <!-- START SINGLE EXPERIENCE DESIGN AREA -->
-            <div class="testimonial-item wow fadeInUp delay-0-2s">
+            <div class="testimonial-item exp-card w-full">
               <div class="author">
                 <img
                   src="assets/images/testimonials/author1.jpg"
@@ -951,9 +1117,10 @@
             </div>
             <!-- / END SINGLE EXPERIENCE DESIGN AREA -->
           </div>
-          <div class="col-span-12 md:col-span-4">
+          <div class="w-full">
             <!-- START SINGLE EXPERIENCE DESIGN AREA -->
-            <div class="testimonial-item wow fadeInUp delay-0-4s">
+            <div class="testimonial-item exp-card w-full">
+
               <div class="author">
                 <img
                   src="assets/images/testimonials/author2.jpg"
@@ -961,36 +1128,23 @@
                 />
               </div>
               <div class="testi-des">
-                <h5>Desarrollador</h5>
-                <span>RedSalud CCHC · abr 2023 — ene 2025</span>
+                <h5>CRO Analyst</h5>
+                <span>Metrix | Growth, Traffic & Media Experts | Moov Media Group · 2023</span>
               </div>
               <br>
               <div class="text">
-                Implementación de la continuidad operacional en GCP-SAP usando Java para automatizar la ingestión de datos de proveedores. Gestión de almacenamiento y operaciones en Google Cloud. Integración de datos contables y operacionales en SAP. Administración de bases de datos PostgreSQL y Oracle, optimizando rendimiento y resiliencia.
+                · Lideré reuniones para levantar requerimientos de negocio y definir planes de medición, alineando métricas clave con los objetivos estratégicos de los clientes. <br>
+                · Implementé sistemas de tracking y analítica de datos, optimizando la generación de reportes y facilitando la toma de decisiones basada en datos en sitios web como: Doite y Comercial Depor. <br>  
+                · Optimicé en Google Analytics el funnel de conversión, corrigiendo el tracking del evento purchase. Esto permitió a Coca-Cola medir con precisión la tasa de conversión y tomar decisiones basadas en datos, logrando un incremento en las ventas.<br>
+                · Resolví incidencias en la captura y procesamiento de datos en sitios web (UCSH, UBO, Coopecaja), asegurando la precisión, integridad y trazabilidad de los datos de interacción de usuarios para su análisis y toma de decisiones. <br> 
               </div>
             </div>
             <!-- / END SINGLE EXPERIENCE DESIGN AREA -->
           </div>
-          <div class="col-span-12 md:col-span-4">
-            <!-- START SINGLE EXPERIENCE DESIGN AREA -->
-            <div class="testimonial-item wow fadeInUp delay-0-6s">
-              <div class="author">
-                <img
-                  src="assets/images/testimonials/author3.jpg"
-                  alt="ABENIS Consultores"
-                />
-              </div>
-              <div class="testi-des">
-                <h5>Desarrollador Junior</h5>
-                <span>ABENIS Consultores · nov 2021 — abr 2023</span>
-              </div>
-              <br>
-              <div class="text">
-                Apoyo en el desarrollo de soluciones para integrar datos en entornos GCP y SAP. Automatización de procesos mediante scripts en Java y herramientas de orquestación. Manejo inicial de bases PostgreSQL y Oracle para consultas, reportes y soporte operativo. Colaboración con equipos multidisciplinarios para mantener y mejorar flujos de trabajo.
-              </div>
-            </div>
-            <!-- / END SINGLE EXPERIENCE DESIGN AREA -->
-          </div>
+          
+
+
+
         </div>
       </div>
     </section>
