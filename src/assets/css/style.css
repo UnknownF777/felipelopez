@@ -287,183 +287,219 @@
   100% { background-position: 28px 0; }
 }
 
-
-/* ===== Título animado pro (underline + shimmer) ===== */
-.section-title{
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px; /* espacio para la línea */
+/* ===== Layout Experiencia Laboral (2 columnas en desktop) ===== */
+#experiencia .exp-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
 }
 
-/* Línea que se dibuja */
-.section-title::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  height:4px;
-  width:100%;
-  border-radius:999px;
-
-  /* color sutil (ajusta si quieres más/menos contraste) */
-  background: linear-gradient(90deg, currentColor 0%, rgba(255,255,255,.0) 110%);
-
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: titleUnderline 900ms cubic-bezier(.2,.9,.2,1) forwards;
-}
-
-/* Brillito que cruza cada cierto tiempo */
-.section-title::before{
-  content:"";
-  position:absolute;
-  left:-20%;
-  bottom:0;
-  height:4px;
-  width:25%;
-  border-radius:999px;
-  background: rgba(255,255,255,.55);
-  filter: blur(.2px);
-  opacity:.0;
-
-  animation: titleShimmer 3.2s ease-in-out 1.1s infinite;
-}
-
-@keyframes titleUnderline{
-  to{ transform: scaleX(1); }
-}
-
-@keyframes titleShimmer{
-  0%, 55% { transform: translateX(0); opacity: 0; }
-  65%     { opacity: .55; }
-  85%     { transform: translateX(520%); opacity: 0; }
-  100%    { opacity: 0; }
-}
-
-/* Accesibilidad */
-@media (prefers-reduced-motion: reduce){
-  .section-title::after,
-  .section-title::before{
-    animation: none !important;
-    transform: none !important;
+/* Mobile: 1 columna */
+@media (max-width: 768px){
+  #experiencia .exp-grid{
+    grid-template-columns: 1fr;
   }
 }
 
-/* ===== Experience card: premium hover (sin “pintar” el fondo) ===== */
-.exp-card{
-  /* Colores del acento (RGB sin comas) -> puedes cambiarlos por card */
-  --acc1: 59 130 246; /* blue */
-  --acc2: 16 185 129; /* emerald */
+/* Quita márgenes/alturas raras del template */
+#experiencia .testimonial-item{
+  margin-bottom: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
 
-  position: relative;
-  overflow: hidden;
-  border-radius: 24px;
 
-  /* Fuerza fondo blanco (por si .testimonial-item mete fondo propio) */
-  background: rgba(255,255,255,.94) !important;
-
-  border: 1px solid rgba(17,24,39,.08);
-  box-shadow: 0 10px 28px rgba(17,24,39,.06);
-
-  transform: translateY(12px);
-  opacity: 0;
-
-  transition:
-    transform .45s cubic-bezier(.2,.8,.2,1),
-    opacity .35s ease,
-    box-shadow .45s ease,
-    border-color .45s ease;
+/* ===== Hover lift (siempre al final para que no lo pisen) ===== */
+#experiencia .exp-card{
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
   will-change: transform;
 }
 
-/* Asegura que el contenido quede SIEMPRE arriba de los efectos */
-.exp-card > *{
+#experiencia .exp-card:hover{
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 52px rgba(17,24,39,.12) !important;
+}
+
+/* Si tienes .is-visible que setea transform: translateY(0), esto lo evita */
+#experiencia .exp-card.is-visible:hover{
+  transform: translateY(-8px) !important;
+}
+/*fin bloque que esta bueno*/
+
+/* ===== Experience PRO: layout + tipografía + densidad ===== */
+#experiencia .exp-card{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 28px 24px;
+}
+
+/* Header: logo + títulos alineados */
+#experiencia .exp-head{
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* Logo más “app-like” */
+#experiencia .author{
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  background: rgba(0,0,0,.04);
+  box-shadow: 0 10px 24px rgba(17,24,39,.10);
+}
+#experiencia .author img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Títulos */
+#experiencia .testi-des h5{
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: .02em;
+}
+#experiencia .testi-des span{
+  display: block;
+  margin-top: 4px;
+  color: rgba(17,24,39,.62);
+}
+
+/* Resumen (2 líneas máx) */
+#experiencia .exp-summary{
+  margin: 0;
+  color: rgba(17,24,39,.72);
+  line-height: 1.55;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Bullets más finos y legibles */
+#experiencia .exp-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+#experiencia .exp-list li{
   position: relative;
-  z-index: 2;
+  padding-left: 16px;
+  color: rgba(17,24,39,.68);
+  line-height: 1.55;
+}
+#experiencia .exp-list li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(var(--acc1), .85);
 }
 
-/* Glow suave, detrás */
-.exp-card::before{
-  content:"";
-  position:absolute;
-  inset:-35%;
-  background:
-    radial-gradient(circle at 12% 18%, rgba(var(--acc1),.18), transparent 55%),
-    radial-gradient(circle at 88% 0%, rgba(var(--acc2),.14), transparent 60%);
-  filter: blur(22px);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .45s ease, transform .45s ease;
-  pointer-events:none;
-  z-index: 0;
+/* Chips */
+#experiencia .exp-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+#experiencia .exp-tag{
+  font-size: .75rem;
+  line-height: 1rem;
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--acc1), .18);
+  background: rgba(var(--acc1), .10);
+  color: rgba(17,24,39,.72);
 }
 
-/* Ring degradado (borde), NO pinta el fondo */
-.exp-card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  padding:1px;
-  border-radius:inherit;
-  background: linear-gradient(120deg,
-     rgba(var(--acc1),.55),
-     rgba(var(--acc2),.45),
-     rgba(var(--acc1),.25)
-  );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity .45s ease;
-  pointer-events:none;
-  z-index: 1;
+/* “Ver más” */
+#experiencia .exp-more{
+  margin-top: 6px;
+}
+#experiencia .exp-more summary{
+  cursor: pointer;
+  font-weight: 700;
+  color: rgba(17,24,39,.70);
+  user-select: none;
+}
+#experiencia .exp-more[open] summary{
+  margin-bottom: 8px;
 }
 
-/* Entrada por scroll (IntersectionObserver) */
-.exp-card.is-visible{
-  opacity:1;
-  transform: translateY(0);
-  transition-delay: var(--d, 0ms);
-}
-
-.exp-card:hover{
+/* ===== Hover estilo “celeste” (como el sitio referencia) ===== */
+/* IMPORTANTÍSIMO: aplica lift SOLO cuando ya está visible */
+#experiencia .exp-card.is-visible:hover{
   transform: translateY(-8px);
-  border-color: rgba(var(--acc1), .22);
-  box-shadow: 0 20px 52px rgba(17,24,39,.12);
-}
-.exp-card:hover::before{ opacity:1; transform: translateY(0); }
-.exp-card:hover::after{ opacity:1; }
-
-/* ---- Shine (opcional, requiere 1 línea HTML) ---- */
-.exp-card .exp-shine{
-  position:absolute;
-  inset:-40%;
-  background: linear-gradient(120deg,
-    transparent 45%,
-    rgba(255,255,255,.55) 50%,
-    transparent 55%
-  );
-  transform: translateX(-35%) rotate(10deg);
-  opacity: 0;
-  pointer-events:none;
-  z-index: 1;
-}
-.exp-card:hover .exp-shine{
-  opacity: .9;
-  animation: expShine 1.1s ease forwards;
-}
-@keyframes expShine{
-  to{ transform: translateX(35%) rotate(10deg); }
 }
 
-/* Accesibilidad */
-@media (prefers-reduced-motion: reduce){
-  .exp-card, .exp-card::before, .exp-card::after, .exp-card .exp-shine{
-    transition: none !important;
-    animation: none !important;
-  }
-  .exp-card{ transform:none !important; opacity:1 !important; }
+/* Variante: fondo celeste suave + títulos/acento cambian */
+#experiencia .exp-card.hover-sky.is-visible:hover{
+  background: linear-gradient(
+    135deg,
+    rgba(var(--acc1), .18),
+    rgba(var(--acc2), .12)
+  ) !important;
 }
+
+/* En hover, títulos y textos cambian */
+#experiencia .exp-card.hover-sky.is-visible:hover .testi-des h5{
+  color: rgb(var(--acc1));
+}
+#experiencia .exp-card.hover-sky.is-visible:hover .exp-summary,
+#experiencia .exp-card.hover-sky.is-visible:hover .exp-list li{
+  color: rgba(17,24,39,.78);
+}
+#experiencia .exp-card.hover-sky.is-visible:hover .exp-tag{
+  background: rgba(var(--acc1), .16);
+  border-color: rgba(var(--acc1), .30);
+  color: rgba(17,24,39,.78);
+}
+
+/* Mobile: reduce padding un poco */
+@media (max-width: 768px){
+  #experiencia .exp-card{ padding: 22px; }
+}
+/* ===== "Ver más" con mismo efecto de color en hover ===== */
+
+/* Estado normal */
+#experiencia .exp-more summary{
+  color: rgba(17,24,39,.70);
+  transition: color .25s ease, transform .25s ease;
+}
+
+/* El triangulito (marker) también cambia */
+#experiencia .exp-more summary::marker{
+  color: rgba(17,24,39,.55);
+  transition: color .25s ease;
+}
+
+/* En hover de la card: cambia "Ver más" a celeste */
+#experiencia .exp-card.hover-sky.is-visible:hover .exp-more summary{
+  color: rgb(var(--acc1));
+}
+
+/* Y su marcador también */
+#experiencia .exp-card.hover-sky.is-visible:hover .exp-more summary::marker{
+  color: rgb(var(--acc1));
+}
+
+/* Opcional: pequeño micro-movimiento para que se sienta “clickeable” */
+#experiencia .exp-card.hover-sky.is-visible:hover .exp-more summary:hover{
+  transform: translateX(2px);
+}
+
 
 
 
