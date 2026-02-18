@@ -365,73 +365,104 @@
         <div class="grid grid-cols-12 gap-6">
           <!-- START ABOUT TEXT DESIGN AREA -->
           <div class="col-span-12 sm:col-span-3">
-            <h2 class="section-title js-type" data-cursor="keep">SOBRE MÍ</h2>
-
-
-          </div>
+            <div class="about-titlebar section-title--with-icon">
+              <span class="section-title__icon" aria-hidden="true">
+                <!-- Icono "perfil / about me" -->
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                  <!-- User circle -->
+                  <path d="M12 21a9 9 0 1 0-9-9 9 9 0 0 0 9 9Z"
+                        stroke="currentColor" stroke-width="1.8"/>
+                  <!-- Head -->
+                  <path d="M12 12a3.2 3.2 0 1 0-3.2-3.2A3.2 3.2 0 0 0 12 12Z"
+                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <!-- Shoulders -->
+                  <path d="M7.6 18.1c1.2-2 3-3.1 4.4-3.1s3.2 1.1 4.4 3.1"
+                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <!-- Small check accent -->
+                  <path d="M15.8 7.6l.9.9 2-2.2"
+                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+               <h2 class="section-title js-type" data-cursor="keep">SOBRE MÍ</h2>
+              </div>
+            </div>
+            
           <div class="col-span-12 sm:col-span-9">
-            <div class="about-content-part wow fadeInUp delay-0-2s max-md:px-0">
-                 <p class="text-lg leading-relaxed mb-4">
-                  <strong>Analista</strong> e <strong>Ingeniero en Informática</strong> especializado en 
-                  <strong>transformar datos en métricas claras</strong>, <strong>KPIs relevantes</strong> e 
-                  <strong>insights accionables</strong> que impulsan <strong>decisiones estratégicas</strong> 
-                  de alto impacto y generan <strong>valor real en el negocio</strong>.
-                </p>
+            <div class="about-card wow fadeInUp delay-0-2s">
 
-                <p class="text-lg leading-relaxed mb-4">
-                  Mi enfoque combina <strong>análisis profundo</strong>, <strong>pensamiento crítico</strong> 
-                  y <strong>visión de negocio</strong>, colaborando con <strong>equipos técnicos</strong> 
-                  y <strong>ejecutivos</strong> para asegurar <strong> decisiones informadas</strong>
-                  y alineadas con los objetivos de la organización.
-                </p>
+              <div class="about-card__body">
+                <div class="about-content-part max-md:px-0">
 
-                <p class="text-lg leading-relaxed mb-4">
-                  Actualmente profundizo mis habilidades en <strong>Data Analyst Specialization 
-                  (Microsoft)</strong>, y en paralelo colaboro con empresas en 
-                  <strong>proyectos intersectoriales</strong> que exigen <strong>precisión</strong>, 
-                  <strong>escalabilidad</strong> y <strong>resultados medibles</strong>.
-                </p>
+                  <p class="text-lg leading-relaxed mb-4">
+                    <strong class="hl">Analista</strong> e <strong>Ingeniero en Informática</strong> especializado en 
+                    <strong class="hl">transformar datos en métricas claras</strong>, <strong>KPIs relevantes</strong> e 
+                    <strong>insights accionables</strong> que impulsan <strong class="hl">decisiones estratégicas</strong> 
+                    de alto impacto y generan <strong class="hl">valor real</strong> en el negocio.
+                  </p>
+
+                  <p class="text-lg leading-relaxed mb-4">
+                    Mi enfoque combina <strong>análisis profundo</strong> y <strong>visión de negocio</strong>, 
+                    colaborando con <strong>equipos técnicos</strong> y <strong>ejecutivos</strong> para asegurar
+                    <strong class="hl">decisiones informadas</strong> y alineadas con los objetivos de la organización.
+                  </p>
+
+                  <p class="text-lg leading-relaxed mb-4">
+                    Actualmente colaboro con empresas en <strong class="hl">proyectos intersectoriales</strong> que exigen 
+                    <strong>precisión</strong>, <strong>escalabilidad</strong> y <strong>resultados medibles</strong>.
+                  </p>
+
+
+                </div>
+              </div>
+
+              <!-- ✅ Aquí, pegás tu bloque de métricas cuando venga (10+, 50%+, 100%+) -->
+              <!-- <div class="about-metrics"> ... </div> -->
+               <div class="about-metrics hero-counter-area wow fadeInUp delay-0-4s">
+                  <div class="counter-item counter-text-wrap stat-item">
+                    <span class="count-text plus" data-speed="3000" data-stop="10">0</span>
+                    <span class="counter-title">Proyectos implementados</span>
+                  </div>
+
+                  <div class="counter-item counter-text-wrap stat-item">
+                    <span class="count-text percent" data-speed="3000" data-stop="70">0</span>
+                    <span class="counter-title">Eficiencia impulsada por IA</span>
+                  </div>
+
+                  <div class="counter-item counter-text-wrap stat-item">
+                    <span class="count-text percent" data-speed="3000" data-stop="30">0</span>
+                    <span class="counter-title">Reducción de tiempo de reporting</span>
+                  </div>
+                </div>
             </div>
-            <!-- START COUNTER DESIGN AREA -->
-            <div
-              class="hero-counter-area wow fadeInUp delay-0-4s flex items-center justify-between"
-            >
-              <div class="counter-item counter-text-wrap">
-                <span class="count-text plus" data-speed="3000" data-stop="10"
-                  >0</span
-                >
-                <span class="counter-title">Proyectos implementados</span>
-              </div>
-              <div class="counter-item counter-text-wrap">
-                <span class="count-text percent" data-speed="3000" data-stop="50">0</span>
-                <span class="counter-title">Eficiencia impulsada por IA</span>
-              </div>
-              <div class="counter-item counter-text-wrap">
-                <span
-                  class="count-text percent"
-                  data-speed="3000"
-                  data-stop="100"
-                  >0</span
-                >
-                <span class="counter-title">Compromiso con la calidad</span>
-              </div>
-            </div>
-            <!-- / END COUNTER DESIGN AREA -->
+          </div>
           </div>
           <!-- / END ABOUT TEXT DESIGN AREA -->
         </div>
       </div>
     </section>
     <!-- / END ABOUT DESIGN AREA -->
-    <!-- START TECHNOLOGIES DESIGN AREA -->
+    <!-- START HABILIDADES DESIGN AREA -->
     <section id="technologies" class="services-area pt-8 md:pt-12">
   <div class="container">
     
     <!-- TÍTULO -->
-    <div class="section-title section-black-title wow fadeInUp delay-0-2s mb-2">
-      <h2 class="section-title js-type" data-loop="true">HABILIDADES</h2>
+    <div class="section-title section-black-title wow fadeInUp delay-0-2s section-title--with-icon">
 
-    </div>
+
+  <span class="section-title__icon" aria-hidden="true">
+    <!-- Icono “skills” (badge/award) -->
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+      <path d="M12 2l2.2 4.5L19 7.2l-3.5 3.4.9 4.8L12 13.7 7.6 15.4l.9-4.8L5 7.2l4.8-.7L12 2Z"
+            stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M9 14.8V22l3-1.6 3 1.6v-7.2"
+            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+
+  <h2 class="section-title js-type" data-loop="true">HABILIDADES</h2>
+
+</div>
+
 
     <!-- GRID DE SKILLS -->
     <!-- GRID DE SKILLS -->
@@ -1091,10 +1122,29 @@
         <div class="grid grid-cols-12">
 
           <div class="lg:col-span-12">
-            <div class="section-title section-black-title wow fadeInUp delay-0-2s">
-              <h2>Experiencia Laboral</h2>
-            </div>
-          </div>
+  <div class="section-title section-black-title wow fadeInUp delay-0-2s section-title--with-icon">
+
+    <span class="section-title__icon" aria-hidden="true">
+      <!-- Icono maletín (SVG) -->
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <path d="M9 7V6a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3v1"
+              stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M4 8.5h16a2 2 0 0 1 2 2v7.5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10.5a2 2 0 0 1 2-2Z"
+              stroke="white" stroke-width="1.8" />
+        <path d="M2 13.2c2.8 1.8 6.2 2.8 10 2.8s7.2-1 10-2.8"
+              stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M10.8 12h2.4"
+              stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+
+    <div class="section-title__text">
+      <h2>Experiencia Laboral</h2>
+    </div>
+
+  </div>
+</div>
+
         </div>
         <div class="exp-grid">
 
@@ -1219,11 +1269,9 @@
     </div>
 
     <div>
-      <span class="block text-[11px] sm:text-xs font-semibold tracking-[0.35em] uppercase text-white/60">
-        Educación
-      </span>
+      
       <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.05]">
-        Formación académica
+        FORMACIÓN ACADEMICA
       </h2>
     </div>
   </div>
@@ -1245,7 +1293,7 @@
                     <div class="text-center sm:text-left">
                       <h4 class="font-semibold text-lg text-black leading-tight">
                         Certificado profesional en Análisis de datos</h4>
-                      <p class="text-xs text-gray-500 mt-1"> Google · 2025</p>
+                      <p class="text-xs text-gray-500 mt-1"> Google · Data Analytics Professional Certificate · 2025</p>
                     </div>
                   </div>
                 </div>
@@ -1254,7 +1302,7 @@
                 <div class="edu-card bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
 
                   <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
-                    <img src="./assets/images/client-logos/duoc.png" alt="Duoc UC" class="w-16 h-16 rounded-full" loading="lazy" />
+                    <img src="./assets/images/client-logos/duocuc.png" alt="Duoc UC" class="w-16 h-16 rounded-full" loading="lazy" />
                     <div class="text-center sm:text-left">
                       <h4 class="font-semibold text-lg text-black leading-tight">
                         Ingeniería en Informática </h4>
@@ -1267,7 +1315,7 @@
                 <!-- Card 3 -->
                 <div class="edu-card bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
                   <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
-                    <img src="./assets/images/client-logos/duoc.png" alt="Duoc UC" class="w-16 h-16 rounded-full" loading="lazy" />
+                    <img src="./assets/images/client-logos/duocuc.png" alt="Duoc UC" class="w-16 h-16 rounded-full" loading="lazy" />
                     <div class="text-center sm:text-left">
                       <h4 class="font-semibold text-lg text-black leading-tight">
                         Analista Programador Computacional</h4>

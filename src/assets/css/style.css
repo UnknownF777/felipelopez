@@ -561,131 +561,324 @@
 }
 /*Fin codigo chips de habilidades y experiencia*/
 
-/* ==========
-   SECTION HEADINGS (PRO)
-   ========== */
-.sec-head{
-  --heading: #0b0b0b;
-  --muted: rgba(0,0,0,.62);
-  --accent: #2563eb;
-
-  margin: 0 0 28px;
-}
-
- /* Si tu sección es oscura, agrega class="theme-dark" al contenedor */
-.theme-dark .sec-head{
-  --heading: #ffffff;
-  --muted: rgba(255,255,255,.68);
-  --accent: #60a5fa;
-}
-
-.sec-kicker{
-  margin: 0 0 10px;
-  font-size: 12px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.sec-title{
-  margin: 0;
-  line-height: .95;
-  font-weight: 900;
-
-  /* clave: responsive + se ve premium */
-  font-size: clamp(34px, 4.2vw, 62px);
-  letter-spacing: -0.02em;
-  color: var(--heading);
-  text-transform: uppercase;
+/* Header con ícono tipo "Formación académica" */
+.section-title--with-icon{
   position: relative;
-  display: inline-block;
-  padding-bottom: 14px;
+  padding-left: 110px; /* espacio para el ícono */
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
-/* subrayado que se "dibuja" */
-.sec-title::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  height: 5px;
-  width: 100%;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
+.section-title__icon{
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: #1b1b1b;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+}
+
+.section-title__text{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.section-title__kicker{
+  font-size: 12px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  line-height: 1;
+}
+/*FIN CODIGO EXPERIENCIA*/
+
+/* FIX alineación logo + texto (HABILIDADES) */
+.section-title--with-icon{
+  display: flex;
+  align-items: center;      /* centra vertical */
+  gap: 18px;
+  min-height: 66px;         /* igual al alto del ícono */
+}
+
+/* Reset del H2 para que no suba por márgenes/line-height */
+.section-title--with-icon h2{
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Ajuste fino: baja el texto un poquito (tuneable) */
+.section-title--with-icon h2.section-title{
+  position: relative;
+  top: 4px;                 /* prueba 2px–6px según tu font */
+}
+
+/* HABILIDADES: alinear icono + titulo y dar separación inferior */
+#technologies .section-title--with-icon{
+  padding-left: 0 !important;      /* <- elimina el corrimiento a la derecha */
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-bottom: 64px !important;            /* <- separación con el contenido de abajo */
+}
+
+/* Si tu icono quedó con position absolute por CSS anterior, lo reseteamos */
+#technologies .section-title__icon{
+  position: static !important;
+  transform: none !important;
+  flex: 0 0 66px;                  /* asegura ancho fijo del círculo */
+}
+
+/* Ajuste fino del texto (si lo quieres un pelín más abajo) */
+#technologies .section-title--with-icon h2.section-title{
+  top: 2px;                        /* prueba 0px / 2px / 4px */
+}
+
+
+/* EXPERIENCIA: mover header más a la izquierda */
+#experiencia .section-title--with-icon{
+  padding-left: 92px;          /* antes 110px */
+}
+
+#experiencia .section-title__icon{
+  left: 0px;                   /* antes 24px */
+}
+
+
+/* ABOUT / SOBRE MI: header pro con icono en fondo negro */
+#about .section-title--with-icon{
+  padding-left: 0 !important;  /* evita que se corra a la derecha */
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;         /* separa del texto grande a la derecha */
+}
+
+/* Resetea el comportamiento "absolute" heredado */
+#about .section-title__icon{
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex: 0 0 66px;
+
+  background: #111; /* negro suave sobre negro */
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+
+  color: #fff; /* el SVG usa currentColor */
+}
+
+/* Ajuste fino del título (márgenes y color en negro) */
+#about .about-titlebar h2{
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  color: #fff; /* letras blancas */
+}
+
+/* ABOUT: hacer el título grande tipo Experiencia/Habilidades */
+#about .about-titlebar h2.section-title{
+  font-size: clamp(42px, 5vw, 78px) !important; /* grande y responsive */
+  font-weight: 900 !important;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Opcional: ajusta el ícono para que acompañe el tamaño del título */
+#about .section-title__icon{
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+}
+
+/* ABOUT: "SOBRE MÍ" en 1 sola línea */
+#about .about-titlebar h2.section-title{
+  white-space: nowrap;                 /* ✅ no se parte */
+  font-size: clamp(34px, 3.6vw, 56px) !important;  /* ✅ más chico */
+  letter-spacing: 0.02em;
+}
+
+/* ===== ABOUT CARD (pro + dinámico) ===== */
+#about .about-card{
+  position: relative;
+  border-radius: 22px;
+  padding: 34px 34px 26px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: transform .18s ease, border-color .18s ease, background-color .18s ease;
+}
+
+#about .about-card::before{
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.18), transparent 45%),
+              linear-gradient(120deg, rgba(255,255,255,.12), transparent 45%);
+  transform: rotate(10deg);
+  opacity: .55;
+  pointer-events: none;
+}
+
+#about .about-card::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 3px;
+  background: linear-gradient(to bottom, rgba(56,189,248,.9), rgba(59,130,246,.65), rgba(255,255,255,0));
   border-radius: 999px;
-  opacity: .95;
-}
-
-/* reveal del texto (clip + blur suave) */
-.sec-title > span{
-  display:inline-block;
-  transform: translateY(10px);
-  filter: blur(6px);
-  opacity: 0;
-  clip-path: inset(0 0 100% 0);
-}
-
-/* subtítulo */
-.sec-sub{
-  margin: 10px 0 0;
-  font-size: 15px;
-  color: var(--muted);
-  min-height: 1.2em; /* evita salto cuando escribe/borrar */
-}
-
-/* cursor */
-.tw::after{
-  content:"";
-  display:inline-block;
-  width: 1px;
-  height: 1.1em;
-  background: currentColor;
-  margin-left: 6px;
-  transform: translateY(2px);
-  animation: blink .9s steps(2,end) infinite;
   opacity: .85;
 }
 
-@keyframes blink{
-  50% { opacity: 0; }
+#about .about-card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.075);
 }
 
-/* Estado animado al entrar en viewport */
-.sec-head.is-visible .sec-title > span{
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
-  clip-path: inset(0 0 0 0);
-  transition:
-    opacity .55s ease,
-    transform .55s cubic-bezier(.2,.8,.2,1),
-    filter .55s ease,
-    clip-path .75s cubic-bezier(.2,.8,.2,1);
+/* Texto dentro del card */
+#about .about-card__body{
+  position: relative;
+  z-index: 1;
 }
 
-.sec-head.is-visible .sec-title::after{
-  transform: scaleX(1);
-  transition: transform .75s cubic-bezier(.2,.8,.2,1) .12s;
+/* Highlight elegante para strong */
+#about .about-card__body strong{
+  color: #fff;
+  font-weight: 800;
+  background: linear-gradient(90deg, rgba(56,189,248,.22), rgba(59,130,246,.18));
+  padding: 2px 8px;
+  border-radius: 10px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
-/* Accesibilidad: respeta "reducir movimiento" */
-@media (prefers-reduced-motion: reduce){
-  .sec-title > span,
-  .sec-title::after,
-  .tw::after{
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-    clip-path: none !important;
-  }
-  .sec-title::after{ transform: scaleX(1) !important; }
+/* Espaciado final del último párrafo (para que el card respire) */
+#about .about-card__body p:last-child{
+  margin-bottom: 0 !important;
+}
+
+/* ✅ ABOUT: tipografía más limpia (como Experiencia) */
+#about .about-card__body p{
+  font-size: 18px;                 /* antes era grande por text-lg */
+  line-height: 1.7;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 18px;
+}
+
+/* ✅ ABOUT: strong = negrita limpia (SIN subrayado) */
+#about .about-card__body strong{
+  color: #fff;
+  font-weight: 800;
+  background: none !important;
+  padding: 0 !important;
+  border-bottom: 0 !important;   /* 🔥 evita subrayado masivo */
+}
+
+/* ✅ ABOUT: highlight selectivo (solo lo esencial) */
+#about .about-card__body .hl{
+  color: #fff;
+  font-weight: 850;
+  border-bottom: 2px solid rgba(56,189,248,0.42);
+  padding-bottom: 2px;
+}
+
+/* opcional: micro glow al hover (elegante) */
+#about .about-card__body .hl:hover{
+  border-bottom-color: rgba(56,189,248,0.75);
 }
 
 
 
+/* ✅ ABOUT CARD: más liviano, más “clean” */
+#about .about-card{
+  border-radius: 18px;
+  padding: 26px 28px 18px;        /* antes 34px */
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.50);
+}
+
+#about .about-card::before{
+  opacity: .25;                   /* antes .55 (muy notorio) */
+}
+
+#about .about-card::after{
+  opacity: .55;                   /* acento más sutil */
+}
+
+/* ✅ ABOUT: título pro, 1 línea */
+#about .about-titlebar h2.section-title{
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  color: #fff;
+  white-space: nowrap;
+
+  font-size: clamp(30px, 3.2vw, 50px) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Ícono acompaña sin robar protagonismo */
+#about .section-title__icon{
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.40);
+  color: #fff;
+}
+
+
+/* ✅ métricas como footer del card */
+#about .about-metrics{
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+#about .about-metrics .stat-item{
+  border-radius: 14px;
+  padding: 14px 12px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.09);
+  text-align: center;
+}
+
+#about .about-metrics .counter-title{
+  color: rgba(255,255,255,0.72);
+  font-size: 13px;
+}
 
 
 /*fin del codigo prueba*/
