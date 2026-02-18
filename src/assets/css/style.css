@@ -501,6 +501,189 @@
 }
 
 
+/* --- Experience "chips/tags" (legibles, estilo pill gris) --- */
+.exp-more-body{
+  margin-top: 12px;
+}
+
+.exp-more-title{
+  margin: 10px 0 10px;
+  opacity: 1;              /* evita que se vea “lavado” */
+  color: #374151;          /* gris oscuro */
+}
+
+.exp-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Chip */
+.exp-tag{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1;
+  white-space: nowrap;
+
+  /* 👇 clave: forzar color + contraste */
+  color: #111827 !important;                         /* texto oscuro (no hereda blanco) */
+  background: #F3F4F6;                    /* pill gris suave */
+  border: 1px solid rgba(17,24,39,.12);   /* borde visible */
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+/* Hover: usa el acento de tu card (var --acc1) para destacarlos */
+.exp-card .exp-tag{
+  transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
+}
+
+.exp-card .exp-tag:hover{
+  transform: translateY(-1px);
+  background: rgb(var(--acc1) / .12);     /* tint suave */
+  border-color: rgb(var(--acc1) / .35);   /* borde con acento */
+}
+
+/* Extra “seguro”: si tu card tiene texto blanco global, acá lo anulamos */
+.exp-card .exp-more,
+.exp-card .exp-more *{
+  color: inherit;
+}
+
+.exp-card .exp-tag{
+  color: #111827; /* vuelve a fijar por si hay reglas más fuertes */
+}
+
+.exp-tag{
+  letter-spacing: .1px;
+}
+/*Fin codigo chips de habilidades y experiencia*/
+
+/* ==========
+   SECTION HEADINGS (PRO)
+   ========== */
+.sec-head{
+  --heading: #0b0b0b;
+  --muted: rgba(0,0,0,.62);
+  --accent: #2563eb;
+
+  margin: 0 0 28px;
+}
+
+ /* Si tu sección es oscura, agrega class="theme-dark" al contenedor */
+.theme-dark .sec-head{
+  --heading: #ffffff;
+  --muted: rgba(255,255,255,.68);
+  --accent: #60a5fa;
+}
+
+.sec-kicker{
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.sec-title{
+  margin: 0;
+  line-height: .95;
+  font-weight: 900;
+
+  /* clave: responsive + se ve premium */
+  font-size: clamp(34px, 4.2vw, 62px);
+  letter-spacing: -0.02em;
+  color: var(--heading);
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 14px;
+}
+
+/* subrayado que se "dibuja" */
+.sec-title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  height: 5px;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 999px;
+  opacity: .95;
+}
+
+/* reveal del texto (clip + blur suave) */
+.sec-title > span{
+  display:inline-block;
+  transform: translateY(10px);
+  filter: blur(6px);
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+}
+
+/* subtítulo */
+.sec-sub{
+  margin: 10px 0 0;
+  font-size: 15px;
+  color: var(--muted);
+  min-height: 1.2em; /* evita salto cuando escribe/borrar */
+}
+
+/* cursor */
+.tw::after{
+  content:"";
+  display:inline-block;
+  width: 1px;
+  height: 1.1em;
+  background: currentColor;
+  margin-left: 6px;
+  transform: translateY(2px);
+  animation: blink .9s steps(2,end) infinite;
+  opacity: .85;
+}
+
+@keyframes blink{
+  50% { opacity: 0; }
+}
+
+/* Estado animado al entrar en viewport */
+.sec-head.is-visible .sec-title > span{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  clip-path: inset(0 0 0 0);
+  transition:
+    opacity .55s ease,
+    transform .55s cubic-bezier(.2,.8,.2,1),
+    filter .55s ease,
+    clip-path .75s cubic-bezier(.2,.8,.2,1);
+}
+
+.sec-head.is-visible .sec-title::after{
+  transform: scaleX(1);
+  transition: transform .75s cubic-bezier(.2,.8,.2,1) .12s;
+}
+
+/* Accesibilidad: respeta "reducir movimiento" */
+@media (prefers-reduced-motion: reduce){
+  .sec-title > span,
+  .sec-title::after,
+  .tw::after{
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    clip-path: none !important;
+  }
+  .sec-title::after{ transform: scaleX(1) !important; }
+}
+
 
 
 

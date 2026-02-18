@@ -44,6 +44,7 @@
         crossorigin="anonymous"></script>
     <![endif]-->
   </head>
+  
 
   <body class="overflow-x-hidden bg-bodyBackground font-normal text-greyBg">
     <!-- START PRELOADER AREA-->
@@ -364,7 +365,8 @@
         <div class="grid grid-cols-12 gap-6">
           <!-- START ABOUT TEXT DESIGN AREA -->
           <div class="col-span-12 sm:col-span-3">
-            <h2 class="text-3xl font-bold mb-6 section-title">Sobre mí</h2>
+            <h2 class="section-title js-type" data-cursor="keep">SOBRE MÍ</h2>
+
 
           </div>
           <div class="col-span-12 sm:col-span-9">
@@ -427,7 +429,8 @@
     
     <!-- TÍTULO -->
     <div class="section-title section-black-title wow fadeInUp delay-0-2s mb-2">
-      <h2>Habilidades</h2>
+      <h2 class="section-title js-type" data-loop="true">HABILIDADES</h2>
+
     </div>
 
     <!-- GRID DE SKILLS -->
@@ -1102,12 +1105,12 @@
 
     <div class="exp-head">
       <div class="author">
-        <img src="assets/images/testimonials/job02.png" alt="Inteli Flow" />
+        <img src="assets/images/testimonials/job02.png" alt="Freelance" />
       </div>
 
       <div class="testi-des">
         <h5>Analista Desarrollador</h5>
-        <span>Freelance | Self-Employed · 2024 – 2025</span>
+        <span>Freelance | Self-Employed | Poyectos · 2024 – 2025</span>
       </div>
     </div>
 
@@ -1117,19 +1120,31 @@
 
     <ul class="exp-list">
       <li><strong>Plan de medición</strong> + diccionario de eventos/KPIs (funnel, conversión, engagement).</li>
-      <li><strong>Auditoría tracking</strong> y propuestas CRO con <strong>+10% CVR</strong> (impacto medible).</li>
-      <li><strong>Implementación</strong> de scripts/tagging para trazabilidad y calidad de datos.</li>
-      <li><strong>Dashboards</strong> para performance y decisiones (cohortes, canales, revenue).</li>
+      <li><strong>Auditoría tracking</strong> con impacto medible: <strong>+10% CVR</strong> en <br> e-commerce.</li>
+      <li><strong>Desarrollo e implementacion </strong> de script en formularios y conversiones (más trazabilidad  y calidad de datos).</li>
+      <li><strong>Dashboards & reporting</strong> para decisiones (funnel, cohortes, canales, revenue).</li>
     </ul>
 
   
 
     <details class="exp-more">
-      <summary>Ver más</summary>
-      <ul class="exp-list exp-list--more">
-        <li>Estandarización de naming/parametrización y validación (menos errores y reprocesos).</li>
-      </ul>
-    </details>
+  <summary>Ver habilidades tecnicas utilizadas</summary>
+
+  <div class="exp-more-body">
+    <div class="exp-tags" aria-label="Habilidades técnicas utilizadas">
+      <span class="exp-tag">Hojas de calculo (Excel · Google Sheets)</span>
+      <span class="exp-tag">Power BI</span>
+      <span class="exp-tag">SQL</span>
+      <span class="exp-tag">Python</span>
+      <span class="exp-tag">R</span>
+      <span class="exp-tag">Tableau</span>
+      <span class="exp-tag">BigQuery</span>
+      <span class="exp-tag">Microsoft SQL Server</span>
+      <span class="exp-tag">VSC</span>
+    </div>
+  </div>
+</details>
+
   </div>
 
   <!-- CARD 2 -->
@@ -1162,11 +1177,23 @@
     
 
     <details class="exp-more">
-      <summary>Ver más</summary>
-      <ul class="exp-list exp-list--more">
-        <li>Optimización de generación de reportes y estandarización operativa del tracking.</li>
-      </ul>
-    </details>
+  <summary>Ver habilidades técnicas utilizadas</summary>
+
+  <div class="exp-more-body">
+
+    <div class="exp-tags" aria-label="Habilidades técnicas utilizadas">
+      <span class="exp-tag">Google Tag Manager</span>
+      <span class="exp-tag">Google Analytics (GA4)</span>
+      <span class="exp-tag">Google Ads</span>
+      <span class="exp-tag">JavaScript</span>
+      <span class="exp-tag">Hojas de calculo (Excel · Google Sheets)</span>
+      <span class="exp-tag">HTML</span>
+      <span class="exp-tag">CSS</span>
+      <span class="exp-tag">Consola</span>
+    </div>
+  </div>
+</details>
+
 
   </div>
 
@@ -1181,42 +1208,75 @@
       <div class="container">
         <div class="grid grid-cols-12 gap-6">
           <div class="col-span-12">
-            <div class="section-title wow fadeInUp delay-0-2s">
-              <h2>Formación Académica</h2>
-            </div>
+            <div class="wow fadeInUp delay-0-2s">
+  <div class="flex items-center gap-4">
+    <!-- Icono (opcional, estilo similar a tus secciones) -->
+    <div class="w-12 h-12 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
+      <!-- birrete simple -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white/70" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3 1 8l11 5 9-4.09V17h2V8L12 3zm0 12L3 10.09V16c0 1.66 3.58 3 8 3s8-1.34 8-3v-5.91L12 15z"/>
+      </svg>
+    </div>
+
+    <div>
+      <span class="block text-[11px] sm:text-xs font-semibold tracking-[0.35em] uppercase text-white/60">
+        Educación
+      </span>
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.05]">
+        Formación académica
+      </h2>
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
         <div class="grid grid-cols-12 gap-6 xl:gap-10">
           <div class="col-span-12">
             <article class="story-card wow fadeInUp delay-0-3s bg-[#f6f6f6] rounded-[24px] p-8">
-              <div class="story-card-head">
-                <span class="story-card-label text-gray-600">Educación</span>
-                <h3 class="story-card-title text-black font-extrabold text-2xl sm:text-3xl md:text-4xl">Evolución constante en ingeniería y tecnología</h3>
-              </div>
-              <div class="timeline-grid grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+            
+              <div class="mt-6 space-y-6 max-w-4xl mx-auto">
+
                 <!-- Card 1 -->
-                <div class="edu-card bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+                <div class="edu-card bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+
                   <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
                     <img src="./assets/images/client-logos/duoc.png" alt="Duoc UC" class="w-16 h-16 rounded-full" loading="lazy" />
                     <div class="text-center sm:text-left">
-                      <h4 class="font-semibold text-lg text-black">Ingeniería en Informática </h4>
+                      <h4 class="font-semibold text-lg text-black leading-tight">
+                        Certificado profesional en Análisis de datos</h4>
+                      <p class="text-xs text-gray-500 mt-1"> Google · 2025</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="edu-card bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+
+                  <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
+                    <img src="./assets/images/client-logos/duoc.png" alt="Duoc UC" class="w-16 h-16 rounded-full" loading="lazy" />
+                    <div class="text-center sm:text-left">
+                      <h4 class="font-semibold text-lg text-black leading-tight">
+                        Ingeniería en Informática </h4>
                       <p class="text-xs text-gray-500 mt-1">Duoc UC · 2021 - 2023</p>
                     </div>
                   </div>
                 </div>
 
                 
-                <!-- Card 2 -->
-                <div class="edu-card bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+                <!-- Card 3 -->
+                <div class="edu-card bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
                   <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
                     <img src="./assets/images/client-logos/duoc.png" alt="Duoc UC" class="w-16 h-16 rounded-full" loading="lazy" />
                     <div class="text-center sm:text-left">
-                      <h4 class="font-semibold text-lg text-black">Analista Programador Computacional</h4>
+                      <h4 class="font-semibold text-lg text-black leading-tight">
+                        Analista Programador Computacional</h4>
                       <p class="text-xs text-gray-500 mt-1">Duoc UC · 2018 — 2020</p>
                     </div>
                   </div>
                 </div>
 
+                
               </div>
             </article>
           </div>
@@ -1464,6 +1524,9 @@
     </div>
     <!-- / END ERROR MODAL -->
 
+  
+
+
     <!-- JQUERY JS -->
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
 
@@ -1491,5 +1554,9 @@
     <script src="./assets/js/success-modal.js"></script>
     <!-- SCRIPT JS-->
     <script src="./assets/js/script.js"></script>
+
+    
+
+    
   </body>
 </html>
