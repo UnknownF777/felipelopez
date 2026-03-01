@@ -187,98 +187,143 @@
     <div class="body-overlay"></div>
     <!-- // END MOBILE MENU DESIGN AREA-->
     <!-- START HEADER DESIGN AREA -->
-    <section id="home" class="bg-primaryColor pt-[90px]">
-      <div class="container">
-        <div class="grid grid-cols-12">
-          <div class="col-span-12">
-            <!-- START HERO DESIGN AREA -->
-            <div class="wow fadeInUp delay-0-2s p-0 text-center">
-              <h2
-                class="text-center text-[50px] sm:text-[70px] md:text-[90px] lg:text-[110px]
-                 xl:text-[150px] font-medium uppercase text-mainColor leading-[0.95] break-words max-w-full"
-                style="word-wrap: break-word;"
-              >
-                Felipe López Astete
-              </h2>
-            </div>
-            <!-- / END HERO DESIGN AREA -->
-          </div>
+    <!-- START HEADER DESIGN AREA -->
+<section id="home" class="relative overflow-hidden bg-primaryColor pt-[90px]">
+  
+  <!-- Fondo animado -->
+  <div id="particles-js" class="absolute inset-0 z-0"></div>
+  <div class="container relative z-10">
+  <div class="grid grid-cols-12 items-center gap-y-10 lg:gap-x-10 min-h-[calc(100vh-90px)] py-10 lg:py-16">
+    
+    <!-- IZQUIERDA: CONTENIDO PRINCIPAL -->
+    <div class="col-span-12 lg:col-span-7">
+      <div class="max-w-[720px] text-left">
+        
+        <!-- Eyebrow -->
+        <p class="text-xs sm:text-sm tracking-[0.24em] uppercase text-black/55">
+          Data & BI · Programming
+        </p>
+
+        <!-- Nombre fijo (marca personal) -->
+        <h1
+          class="mt-3 text-[38px] sm:text-[52px] md:text-[68px] lg:text-[82px] xl:text-[96px]
+                 font-semibold text-mainColor leading-[0.95] tracking-[-0.03em] max-w-[10ch]">
+          Felipe López
+        </h1>
+
+        <!-- Cargo dinámico -->
+        <h2
+          class="mt-5 text-[22px] sm:text-[28px] md:text-[34px] lg:text-[42px]
+                 font-semibold uppercase text-black leading-[1.05] min-h-[2.3em]">
+          <span id="typed-hero"></span><span class="hero-cursor">|</span>
+        </h2>
+
+        <!-- Propuesta de valor -->
+        <p class="mt-6 text-base sm:text-lg leading-relaxed text-black/85 max-w-[58ch]">
+          Analista e Ingeniero en Informática especializado en
+          <strong>KPIs</strong>, <strong>medición confiable</strong> e
+          <strong>insights accionables</strong> para optimizar eficiencia,
+          trazabilidad y resultados de negocio.
+        </p>
+
+        <!-- Botones -->
+        <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3">
+          <a href="./assets/docs/Felipe-Lopez-CV.pdf"
+            class="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold
+                   bg-black text-white border border-black
+                   hover:bg-white hover:text-black transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Descargar CV
+          </a>
+
+          <a href="#proyectos"
+            class="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold
+                   border border-black/20 bg-white text-black
+                   hover:border-black/40 hover:bg-black/5 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            Ver proyectos
+          </a>
         </div>
-        <div class="grid grid-cols-12 max-lg:overflow-hidden lg:gap-6">
-          <div class="col-span-12 pt-8 lg:col-span-3">
-            <!-- START HERO DESIGN AREA -->
-            <div class="flex flex-col justify-start text-black h-auto lg:h-fit">
-              <!-- Texto alineado a la izquierda -->
-               <p class="pb-4"> <strong>Analista</strong> e <strong>Ingeniero en Informática</strong><br />
-                con certificación profesional de <strong>Google</strong> en <strong>Análisis de Datos</strong>.
-              </p>
-              
-              <!-- Imagen centrada debajo -->
-              <!-- Imagen centrada sin afectar el texto -->
-              <div class="flex justify-center mt-2">
-                <a href="https://coursera.org/share/4153c0c7fb689fe57aada1e867c10180" target="_blank" rel="noopener noreferrer">
-                  <img
-                  class="max-w-[90px] sm:max-w-[110px] md:max-w-[130px] h-auto object-contain"
-                  src="./assets/images/avatar/01.png"
-                  alt="Certificado Google Data Analytics"
-                  loading="lazy"/>
-                </a>
-               </div>
-               <!-- Segundo párrafo -->
-                <p class="pt-4"> Transformo datos en decisiones estratégicas que aumentan la eficiencia, reducen costos 
-                  y potencian el crecimiento del negocio.
-                </p>
-              </div>
-            <!-- / END HERO DESIGN AREA -->
-          </div>
-          <div class="col-span-12 lg:col-span-6">
-            <div class="hero-image lg:mt-0">
-              <img src="./assets/images/about/me.jpg" alt="Foto de Felipe López"
-              class="w-full h-auto max-w-[300px] md:max-w-[400px] lg:max-w-[420px] xl:max-w-[450px] mx-auto"
-              loading="lazy" />
-            </div>
-          </div>
-          <!-- / END HERO DESIGN AREA -->
-          <div class="col-span-12 pt-8 lg:col-span-3">
-            <div class="hero-content wow fadeInUp delay-0-4s">
-              <p class="pb-4">
-                <strong>Data & BI Analyst</strong> especialista en convertir información compleja
-                 en soluciones que optimizan procesos, anticipan tendencias y generan ventajas competitivas.
-              </p>
 
-              <!-- Boton CV -->
-              <a href="./docs/CV_Felipe_López.pdf" download="CV_Felipe_López.pdf" class="custom-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
-                </svg>
-                Descargar CV
-              </a>
-
-
-              <!-- Titulo Certificaciones -->
-              <h4 class="cert-title"><strong>Certificado Profesional</strong></h4>
-
-              <!-- Boton Certificado Google Data Analytics -->
-              <a href="./docs/Certificado_Google_Data_Analytics.pdf"
-                download="Certificado_Google_Data_Analytics.pdf"
-                class="custom-btn"
-                >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                  viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
-                </svg>
-                Google Data Analytics
-              </a>
-
-
-            </div>
-            <!-- / END HERO DESIGN AREA -->
-          </div>
-        </div>
+        <!-- Credencial -->
+        <a href="https://coursera.org/share/4153c0c7fb689fe57aada1e867c10180"
+          target="_blank" rel="noopener noreferrer"
+          class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-black/70 hover:text-black transition">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          Certificación: Google Data Analytics
+        </a>
       </div>
+    </div>
+
+    <!-- DERECHA: CARD PROFESIONAL -->
+    <div class="col-span-12 lg:col-span-5">
+      <div class="lg:ml-auto max-w-[430px] rounded-3xl border border-black/10 bg-white/85 backdrop-blur-sm p-7 shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
+        
+        <p class="text-xs tracking-[0.24em] uppercase text-black/55">
+          Cómo trabajo
+        </p>
+
+        <h3 class="mt-3 text-[26px] sm:text-[30px] font-semibold text-black leading-tight tracking-[-0.02em]">
+          Datos claros, decisiones sólidas y mejora continua.
+        </h3>
+
+        <p class="mt-4 text-sm sm:text-base text-black/65 leading-relaxed">
+          Diseño soluciones orientadas a medición, análisis y automatización
+          práctica para convertir datos en acciones útiles.
+        </p>
+
+        <!-- Puntos de valor -->
+        <div class="mt-6 space-y-3">
+          <div class="flex items-start gap-3">
+            <span class="mt-2 h-2 w-2 rounded-full bg-black"></span>
+            <p class="text-sm text-black/80">KPIs y dashboards con foco en negocio.</p>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="mt-2 h-2 w-2 rounded-full bg-black"></span>
+            <p class="text-sm text-black/80">Trazabilidad, análisis y diagnóstico confiable.</p>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <span class="mt-2 h-2 w-2 rounded-full bg-black"></span>
+            <p class="text-sm text-black/80">Automatización aplicada para ahorrar tiempo y reducir errores.</p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-7 space-y-3">
+          <a href="#contacto"
+             class="inline-flex w-full items-center justify-center rounded-xl
+                    border border-black bg-black px-5 py-3 font-semibold text-white
+                    hover:bg-white hover:text-black transition-colors duration-200">
+            Hablemos
+          </a>
+
+          <a href="#experiencia"
+             class="inline-flex w-full items-center justify-center rounded-xl
+                    border border-black/20 bg-white px-5 py-3 font-semibold text-black
+                    hover:border-black/40 hover:bg-black/5 transition-colors duration-200">
+            Ver experiencia
+          </a>
+        </div>
+
+        <p class="mt-5 text-xs text-black/50">
+          Respuesta en 24–48h
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
     </section>
     <!-- / END HEADER DESIGN AREA -->
 
@@ -961,7 +1006,7 @@
   <header class="flex items-start justify-between gap-4">
   <div class="min-w-0">
     <h4 class="text-base font-semibold text-black">
-      Backend (Java · Spring Boot)
+      Backend (Java · Spring Boot - Node · Express)
     </h4>
     <p class="text-sm text-black/70">
        APIs REST en producción: Spring MVC, persistencia, seguridad y buenas prácticas.
@@ -1289,7 +1334,7 @@
                 <div class="edu-card bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
 
                   <div class="flex flex-col sm:flex-row items-center sm:items-start gap-3">
-                    <img src="./assets/images/client-logos/duoc.png" alt="Duoc UC" class="w-16 h-16 rounded-full" loading="lazy" />
+                    <img src="./assets/images/client-logos/GoogleAnalyst.png" alt="Google Data Analyst" class="w-16 h-16 rounded-full" loading="lazy" />
                     <div class="text-center sm:text-left">
                       <h4 class="font-semibold text-lg text-black leading-tight">
                         Certificado profesional en Análisis de datos</h4>
@@ -1338,11 +1383,13 @@
       <div class="container">
         <div class="grid grid-cols-12 gap-6">
           <div class="col-span-12">
-            <div
-              class="section-title section-black-title wow fadeInUp delay-0-2s"
-            >
-              <h2>Contáctame</h2>
-            </div>
+            <div class="contact-titlebar wow fadeInUp delay-0-2s">
+  <span class="contact-titlebar__icon" aria-hidden="true">
+    <i class="ri-mail-send-line"></i>
+  </span>
+  <h2 class="contact-titlebar__title">Contacto</h2>
+</div>
+
           </div>
         </div>
         <div class="grid grid-cols-12 gap-6">
@@ -1357,22 +1404,18 @@
                 <p>Región Metropolitana de Santiago, Chile</p>
               </div>
               <!-- / END CONTACT SINGLEDESIGN AREA -->
-              <!-- START CONTACT SINGLEDESIGN AREA -->
-              <div class="single-contact wow fadeInUp" data-wow-delay=".4s">
-                <span class="circle-btn">
-                  <i class="ri-headphone-line"></i>
-                </span>
-                <h2>Teléfono:</h2>
-                <p>+56 9 8529 3928</p>
-              </div>
-              <!-- / END CONTACT SINGLEDESIGN AREA -->
+    
               <!-- START CONTACT SINGLEDESIGN AREA -->
               <div class="single-contact wow fadeInUp" data-wow-delay=".6s">
                 <span class="circle-btn">
                   <i class="ri-mail-line"></i>
                 </span>
                 <h2>Email:</h2>
-                <p>felipelopez.ast@gmail.com</p>
+                  <p>
+                    <a href="mailto:felipelopez.ast@gmail.com" class="contact-mail">
+                      Felipelopez.ast@gmail.com
+                    </a>
+                  </p>
               </div>
               <!-- / END CONTACT SINGLEDESIGN AREA -->
               <!-- START CONTACT SINGLEDESIGN AREA -->
@@ -1385,6 +1428,11 @@
                     </li>
                     <li>
                       <a href="https://github.com/UnknownF777" target="_blank" rel="noopener noreferrer"><i class="ri-github-line"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/JaredFeliiipe__7/" target="_blank" rel="noopener noreferrer">
+                        <i class="ri-instagram-line"></i>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -1404,7 +1452,7 @@
                 <!-- FormSubmit Configuration -->
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="https://pedrorivera.net/"">
+                <input type="hidden" name="_next" value="https://felipelopez.cl/">
 
                 <!-- Honeypot Anti-Spam -->
                 <div style="position: absolute; left: -5000px;" aria-hidden="true">
@@ -1428,7 +1476,7 @@
                       <label for="name" class="for-icon"
                         ><i class="far fa-user"></i
                       ></label>
-                      <div class="help-block with-errors"></div>
+                      
                     </div>
                   </div>
                   <div class="col-span-12 md:col-span-6">
@@ -1447,9 +1495,56 @@
                       <label for="email" class="for-icon"
                         ><i class="far fa-envelope"></i
                       ></label>
-                      <div class="help-block with-errors"></div>
+                    
                     </div>
                   </div>
+
+                  <!-- ✅ País + Teléfono -->
+<!-- ✅ País + Teléfono -->
+<div class="col-span-12 md:col-span-6">
+  <div class="form-group relative">
+    <label for="country">País</label>
+
+    <select id="country" name="country" class="form-control" required autocomplete="country-name">
+      <!-- Sudamérica -->
+      <option value="Chile" data-dial="+56" selected>Chile (+56)</option>
+      <option value="Argentina" data-dial="+54">Argentina (+54)</option>
+      <option value="Bolivia" data-dial="+591">Bolivia (+591)</option>
+      <option value="Brasil" data-dial="+55">Brasil (+55)</option>
+      <option value="Colombia" data-dial="+57">Colombia (+57)</option>
+      <option value="Costa Rica" data-dial="+506">Costa Rica (+506)</option>
+      <option value="Ecuador" data-dial="+593">Ecuador (+593)</option>
+      <option value="EE.UU." data-dial="+1">EE.UU. (+1)</option>
+      <option value="España" data-dial="+34">España (+34)</option>
+      <option value="El Salvador" data-dial="+503">El Salvador (+503)</option>
+      <option value="Guatemala" data-dial="+502">Guatemala (+502)</option>
+      <option value="Guyana" data-dial="+592">Guyana (+592)</option>
+      <option value="Honduras" data-dial="+504">Honduras (+504)</option>
+      <option value="México" data-dial="+52">México (+52)</option>
+      <option value="Nicaragua" data-dial="+505">Nicaragua (+505)</option>
+      <option value="Panamá" data-dial="+507">Panamá (+507)</option>
+      <option value="Paraguay" data-dial="+595">Paraguay (+595)</option>
+      <option value="Perú" data-dial="+51">Perú (+51)</option>
+      <option value="Puerto Rico" data-dial="+1">Puerto Rico (+1)</option>
+      <option value="República Dominicana" data-dial="+1">República Dominicana (+1)</option>
+      <option value="Uruguay" data-dial="+598">Uruguay (+598)</option>
+      <option value="Venezuela" data-dial="+58">Venezuela (+58)</option>
+    </select>
+    <span class="for-icon" aria-hidden="true"><i class="ri-earth-line"></i></span>
+    <span class="select-caret" aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+  </div>
+</div>
+
+<div class="col-span-12 md:col-span-6">
+  <div class="form-group relative">
+    <label for="phone">Teléfono celular</label>
+    <input type="tel"id="phone" name="phone" class="form-control" placeholder="9 1234 5678" equiredinputmode="tel" utocomplete="tel"/>
+    <span class="for-icon" aria-hidden="true"><i class="ri-smartphone-line"></i></span>
+  </div>
+</div>
+
+
+
                   <div class="col-span-12 md:col-span-12">
                     <div class="form-group">
                       <label for="subject">Asunto</label>
@@ -1466,7 +1561,7 @@
                       <label for="subject" class="for-icon"
                         ><i class="far fa-edit"></i
                       ></label>
-                      <div class="help-block with-errors"></div>
+                    
                     </div>
                   </div>
                   <div class="col-span-12 md:col-span-12">
@@ -1481,7 +1576,7 @@
                         required=""
                         data-error="Por favor escribe tu mensaje"
                       ></textarea>
-                      <div class="help-block with-errors"></div>
+                    
                     </div>
                   </div>
                   <div class="col-span-12 md:col-span-12">
@@ -1509,35 +1604,112 @@
       </div>
     </section>
     <!-- / END CONTACT DESIGN AREA -->
+
     <!-- START FOOTER DESIGN AREA -->
-    <footer class="main-footer">
-      <div class="container">
-        <div class="grid grid-cols-12 gap-6">
-          <div class="col-span-12">
-            <div class="footer-top">
-              <p class="text-base sm:text-lg md:text-xl lg:text-xl max-w-2xl mx-auto text-center mb-4">
-                ¿Interesado en colaborar o conversar sobre tecnología?
-              </p>
-              <h2
-                class="text-[48px] sm:text-[72px] md:text-[110px] lg:text-[140px] xl:text-[170px] max-w-full leading-[0.9] break-words text-center"
-              >
-                <a href="https://wa.me/+56985293928" target="_blank" rel="noopener noreferrer">Contáctame</a>
-              </h2>
+     <!-- START FOOTER DESIGN AREA -->
+<footer class="main-footer" id="footer">
+  <div class="container">
+    <div class="grid grid-cols-12 gap-10 footer-main">
+
+      <!-- Col 1: Brand + contacto -->
+      <div class="col-span-12 lg:col-span-4">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="footer-mark" aria-hidden="true">
+              <i class="ri-terminal-box-line"></i>
+            </span>
+            <div>
+              <h3 class="footer-name">Felipe López</h3>
+              <p class="footer-role">DATA &amp; BI · PROGRAMMING INSTRUCTOR</p>
             </div>
           </div>
-        </div>
-        <div class="grid grid-cols-12 gap-6">
-          <div class="col-span-12 sm:col-span-6">
-            <p class="copy-left-text">
-              Dev by Felipe López
-            </p>
-          </div>
-          <div class="col-span-12 sm:col-span-6">
-            <p class="copy-right-text">&copy; Copyright 2025</p>
-          </div>
+
+          <ul class="footer-contact">
+            <li>
+              <i class="ri-mail-line" aria-hidden="true"></i>
+              <a href="mailto:felipelopez.ast@gmail.com">felipelopez.ast@gmail.com</a>
+            </li>
+           
+            <li>
+              <i class="ri-map-pin-line" aria-hidden="true"></i>
+              <span>Región Metropolitana, Chile</span>
+            </li>
+          </ul>
         </div>
       </div>
-    </footer>
+
+      <!-- Col 2: Navegación -->
+      <div class="col-span-12 sm:col-span-6 lg:col-span-4">
+        <h4 class="footer-title"><span class="footer-title-accent">&gt;_</span> Navegación</h4>
+        <ul class="footer-links">
+          <li>
+            <a href="#home" class="is-active">Inicio<span class="footer-link-muted">Bienvenida</span></a>
+
+          </li>
+          <li>
+            <a href="#about">Sobre mí <span class="footer-link-muted">Mi perfil</span></a>
+          </li>
+          <li>
+            <a href="#technologies">Habilidades <span class="footer-link-muted">Stack &amp; herramientas</span></a>
+          </li>
+          <li>
+            <a href="#projects">Proyectos <span class="footer-link-muted">Mi trabajo</span></a>
+          </li>
+          <li>
+            <a href="#experiencia">Experiencia <span class="footer-link-muted">Timeline</span></a>
+          </li>
+          <li>
+            <a href="#contact">Contacto <span class="footer-link-muted">Conversemos</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Proyectos + redes -->
+      <div class="col-span-12 sm:col-span-6 lg:col-span-4">
+        <h4 class="footer-title"><span class="footer-title-accent">&gt;_</span> Proyectos Destacados</h4>
+        <ul class="footer-links">
+          <li><a href="#projects">Portafolio Web <span class="footer-link-muted">UI/UX + performance</span></a></li>
+          <li><a href="#projects">Dashboards BI <span class="footer-link-muted">KPIs &amp; reporting</span></a></li>
+          <li><a href="#projects">Analítica / CRO <span class="footer-link-muted">Experimentos &amp; tracking</span></a></li>
+        </ul>
+
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/felipelopezastete7/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="ri-linkedin-fill"></i>
+          </a>
+          <a href="https://github.com/UnknownF777" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="ri-github-line"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-divider" role="presentation"></div>
+
+      <div class="grid grid-cols-12 gap-4 items-center">
+        <div class="col-span-12 md:col-span-6">
+          <p class="footer-copy">© <span id="year"></span> Felipe López. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-span-12 md:col-span-6 md:text-right">
+          <p class="footer-copy footer-copy--muted">De la idea al deploy 🚀</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var el = document.getElementById("year");
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+<!-- / END FOOTER DESIGN AREA -->
+
+    
     <!-- / END FOOTER DESIGN AREA -->
 
     <!-- SUCCESS MODAL -->
@@ -1572,7 +1744,162 @@
     </div>
     <!-- / END ERROR MODAL -->
 
-  
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const country = document.getElementById("country");
+  const phone = document.getElementById("phone");
+  if (!country || !phone) return;
+
+  const applyDial = () => {
+    const opt = country.options[country.selectedIndex];
+    const dial = (opt && opt.dataset.dial) ? opt.dataset.dial : "";
+
+    // Guarda dial para usarlo luego
+    phone.dataset.dial = dial;
+
+    // Limpia cualquier prefijo anterior +XX
+    const raw = (phone.value || "").trim().replace(/^\+\d+\s*/, "");
+
+    // Si ya había número, lo conserva y le pone el nuevo prefijo
+    phone.value = dial ? `${dial} ${raw}`.trim() + (raw ? "" : " ") : raw;
+
+    // Placeholder pro
+    phone.placeholder = dial ? `${dial} 9 1234 5678` : "9 1234 5678";
+  };
+
+  // Inicial
+  applyDial();
+
+  // Al cambiar país
+  country.addEventListener("change", applyDial);
+});
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: {
+  value: 120,
+  density: {
+    enable: true,
+    value_area: 1200
+  }
+},
+      color: {
+        value: "#8f98a3"
+      },
+      shape: {
+        type: "circle"
+      },
+      opacity: {
+        value: 0.38,
+        random: true
+      },
+      size: {
+        value: 3.5,
+        random: true
+      },
+      line_linked: {
+  enable: true,
+  distance: 190,
+  color: "#8f98a3",
+  opacity: 0.22,
+  width: 1
+},
+      move: {
+        enable: true,
+        speed: 1.4,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false
+      }
+    },
+    interactivity: {
+      detect_on: "window",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "grab"
+        },
+        onclick: {
+          enable: false
+        },
+        resize: true
+      },
+      modes: {
+  grab: {
+    distance: 280,
+    line_linked: {
+      opacity: 0.9
+    }
+  }
+}
+    },
+    retina_detect: true
+  });
+</script>
+
+
+
+
+<script>
+  const heroWords = [
+    "Analista Programador",
+    "Ingeniero en Informática",
+    "Data Analyst",
+    "Business Intelligence",
+  ];
+
+  const typedHero = document.getElementById("typed-hero");
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const typingSpeed = 110;     // velocidad al escribir
+  const deletingSpeed = 65;    // velocidad al borrar
+  const pauseAfterTyping = 1500; // espera cuando termina una palabra
+  const pauseAfterDeleting = 450; // espera cuando borra completo
+
+  function typeHero() {
+    const currentWord = heroWords[wordIndex];
+
+    if (!isDeleting) {
+      typedHero.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentWord.length) {
+        isDeleting = true;
+        setTimeout(typeHero, pauseAfterTyping);
+        return;
+      }
+
+      setTimeout(typeHero, typingSpeed);
+    } else {
+      typedHero.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % heroWords.length;
+        setTimeout(typeHero, pauseAfterDeleting);
+        return;
+      }
+
+      setTimeout(typeHero, deletingSpeed);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    typeHero();
+  });
+</script>
 
 
     <!-- JQUERY JS -->

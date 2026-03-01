@@ -315,7 +315,8 @@
   });
 
   // ## Nice Select
-  $("select").niceSelect();
+$('select').not('#country').niceSelect();
+
 
   // ## WOW Animation
   if ($(".wow").length) {

@@ -880,6 +880,640 @@
   font-size: 13px;
 }
 
+/* HERO CTA CARD (derecha) - pro + dinámico */
+.hero-cta-card{
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.62));
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+
+
+/* Glow sutil */
+.hero-cta-card::after{
+  content:"";
+  position:absolute;
+  inset:-60%;
+  background:
+    radial-gradient(circle at 75% 20%, rgba(0,0,0,0.12), transparent 55%),
+    radial-gradient(circle at 15% 80%, rgba(0,0,0,0.08), transparent 55%);
+  transform: rotate(12deg);
+  opacity: .45;
+  pointer-events:none;
+}
+
+.hero-cta-card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(0,0,0,0.14);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.14);
+}
+
+
+/* =========================
+   CONTACT: look pro + dinámico
+   ========================= */
+
+/* Titlebar con icono (como Experiencia) */
+#contact .contact-titlebar{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom: 10px;
+}
+
+#contact .contact-titlebar__icon{
+  width:64px;
+  height:64px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+
+  background:#111;
+  color:#fff;
+  border:1px solid rgba(0,0,0,0.12);
+  box-shadow:0 14px 30px rgba(0,0,0,0.18);
+  flex:0 0 64px;
+}
+
+#contact .contact-titlebar__icon i{
+  font-size:26px;
+  line-height:1;
+}
+
+#contact .contact-titlebar__title{
+  margin:0;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: clamp(40px, 6vw, 78px);
+  color:#111;
+}
+
+/* Contenedor izquierdo: separa y ordena */
+#contact .contact-content-part{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+/* Tarjeta base */
+#contact .single-contact{
+  position:relative;
+  border-radius:18px;
+  padding:22px 22px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+  overflow:hidden;
+
+  transform: translateY(0);
+  transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+/* Acento lateral sutil (como tu línea de tarjetas) */
+#contact .single-contact::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:14px;
+  bottom:14px;
+  width:3px;
+  border-radius:999px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0));
+  opacity: .35;
+}
+
+/* Hover: sube + cambia el fondo (dinámico) */
+#contact .single-contact:hover{
+  transform: translateY(-4px);
+  background: rgba(0,0,0,0.03); /* “toma” el color del fondo */
+  border-color: rgba(0,0,0,0.12);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.12);
+}
+
+/* Icon badge actual (circle-btn) */
+#contact .single-contact .circle-btn{
+  width:52px;
+  height:52px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  background: rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.10);
+  transition: background-color .18s ease, color .18s ease, transform .18s ease;
+}
+
+/* Icono hover invert */
+#contact .single-contact:hover .circle-btn{
+  background:#111;
+  color:#fff;
+  transform: scale(1.03);
+}
+
+/* Tipografías más limpias dentro */
+#contact .single-contact h2{
+  margin-top: 12px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color:#111;
+}
+
+#contact .single-contact p{
+  color: rgba(0,0,0,0.65);
+}
+
+/* Links (tel/mail) */
+#contact .contact-link{
+  color: rgba(0,0,0,0.70);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+}
+#contact .contact-link:hover{
+  color:#000;
+  border-bottom-color: rgba(0,0,0,0.35);
+}
+
+/* Redes sociales más “premium” */
+#contact .about-social ul{
+  display:flex;
+  gap:10px;
+  margin-top: 10px;
+}
+#contact .about-social a{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+
+  color:#111;
+  transition: transform .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+#contact .about-social a:hover{
+  transform: translateY(-3px);
+  background:#111;
+  color:#fff;
+  border-color: rgba(0,0,0,0.22);
+}
+
+/* ===== Form “card” para que combine ===== */
+#contact .contact-form-area{
+  border-radius: 18px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 26px;
+}
+
+/* Inputs: focus pro */
+#contact .contact-form-area .form-control{
+  border: 1px solid rgba(0,0,0,0.22);
+  border-radius: 12px;
+  transition: box-shadow .18s ease, border-color .18s ease;
+}
+
+#contact .contact-form-area .form-control:focus{
+  outline: none;
+  border-color: rgba(0,0,0,0.55);
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.10);
+}
+
+/* Botón: igual estilo que tus CTAs (invert) */
+#contact .contact-form-area .theme-btn{
+  border-radius: 14px;
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+  padding: 14px 18px;
+  font-weight: 800;
+  transition: background-color .18s ease, color .18s ease;
+}
+
+#contact .contact-form-area .theme-btn:hover{
+  background: #fff;
+  color:#111;
+}
+
+/* ✅ QUITAR LA LINEA/ACENTO IZQUIERDO DE LAS TARJETAS */
+#contact .single-contact::before{
+  content: none !important;
+  display: none !important;
+}
+
+/* ✅ ICONO: NO INVERTIR A NEGRO AL HOVER */
+#contact .single-contact .circle-btn{
+  background: rgba(255,255,255,0.75) !important;
+  color: #111 !important;
+  border: 1px solid rgba(0,0,0,0.10) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+#contact .single-contact:hover .circle-btn{
+  background: rgba(255,255,255,0.92) !important; /* más “premium” */
+  color: #111 !important;
+  border-color: rgba(0,0,0,0.14) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+
+/* ✅ TARJETAS CONTACTO: más limpias y pro */
+#contact .single-contact{
+  background: rgba(255,255,255,0.55) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08) !important;
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease;
+}
+
+#contact .single-contact:hover{
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.70) !important;
+  border-color: rgba(0,0,0,0.12) !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.12) !important;
+}
+
+/* ================================
+   CONTACT FORM - FIX SELECT COUNTRY
+   Pegar al FINAL del CSS
+================================ */
+
+/* Asegura layout consistente */
+#contact .form-group { position: relative; }
+
+/* (1) Select: que no se vea negro y que calce con los inputs */
+#contact select.form-control--select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background-color: #fff !important;
+  color: #111 !important;
+
+  /* Igualar altura/padding con tus inputs */
+  height: 58px;
+  padding: 0 64px 0 18px; /* espacio derecha para icono + flecha */
+  border-radius: 14px;
+  line-height: 58px;
+
+  cursor: pointer;
+}
+
+/* (2) Hover/focus: mantener fondo blanco (no negro) */
+#contact select.form-control--select:hover,
+#contact select.form-control--select:focus{
+  background-color: #fff !important;
+  color: #111 !important;
+  border-color: rgba(0,0,0,0.25);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.06);
+}
+
+/* (3) Dropdown options: forzar blanco (evita lista negra) */
+#contact select.form-control--select option{
+  background-color: #fff !important;
+  color: #111 !important;
+}
+
+/* (4) Iconos dentro del input: que NO se vuelvan negros raros */
+#contact .for-icon{
+  position: absolute;
+  right: 18px;
+  top: 46px;           /* ajusta si tu label tiene otra altura */
+  transform: translateY(-50%);
+  pointer-events: none; /* evita hover/click que cause cambios raros */
+  opacity: 0.75;
+}
+
+#contact .for-icon i{
+  font-size: 18px;
+  color: rgba(0,0,0,0.65);
+}
+
+/* Flecha del select (caret) */
+#contact .select-caret{
+  position: absolute;
+  right: 44px;
+  top: 46px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+#contact .select-caret i{
+  font-size: 18px;
+  color: rgba(0,0,0,0.65);
+}
+
+/* (5) Cuando el grupo está activo: iconos un poquito más visibles */
+#contact .form-group:focus-within .for-icon,
+#contact .form-group:focus-within .select-caret{
+  opacity: 0.9;
+}
+
+#contact select.form-control--select,
+#contact select.form-control--select option{
+  background: #fff !important;
+  color: #111 !important;
+}
+
+
+@layer utilities {
+  /* Fuerza UI clara en controles nativos */
+  #contact { color-scheme: light; }
+
+  /* Select país: misma altura/padding que inputs */
+  #contact .contact-form-area select#country.form-control{
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    height: 58px !important;
+    padding: 0 64px 0 18px !important;
+    border-radius: 12px !important;
+
+    background: #fff !important;
+    color: #111 !important;
+    border: 1px solid rgba(0,0,0,0.22) !important;
+    line-height: 1.2 !important;
+
+    cursor: pointer;
+  }
+
+  /* Hover/focus: que no se oscurezca */
+  #contact .contact-form-area select#country.form-control:hover,
+  #contact .contact-form-area select#country.form-control:focus{
+    background: #fff !important;
+    color: #111 !important;
+    border-color: rgba(0,0,0,0.40) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.08) !important;
+  }
+
+  /* Intento de forzar options claras (OJO: depende del SO/navegador) */
+  #contact .contact-form-area select#country.form-control option{
+    background: #fff !important;
+    color: #111 !important;
+    font-weight: 500 !important;
+  }
+
+  /* Evita que el “seleccionado” se vea más bold (no siempre se respeta) */
+  #contact .contact-form-area select#country.form-control option:checked{
+    font-weight: 500 !important;
+  }
+}
+/* ✅ CONTACT: no mostrar el help-block cuando está vacío */
+#contact .help-block.with-errors{
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin-top: 6px !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+#contact .help-block.with-errors:empty{
+  display: none !important;
+}
+
+
+/* =========================
+   FOOTER PRO (inspiración "terminal")
+   ========================= */
+
+.main-footer{
+  background: #070707;
+  color: rgba(255,255,255,.86);
+  padding: 64px 0 28px;
+}
+
+.main-footer a{
+  color: rgba(255,255,255,.86);
+  text-decoration: none;
+}
+
+.main-footer a:hover{
+  color: #fff;
+}
+
+/* Brand */
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom: 18px;
+}
+
+.footer-mark{
+  width:54px;
+  height:54px;
+  border-radius: 16px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  flex: 0 0 54px;
+}
+
+.footer-mark i{ font-size: 22px; }
+
+.footer-name{
+  margin:0;
+  font-weight: 900;
+  letter-spacing: .02em;
+  font-size: 18px;
+}
+
+.footer-role{
+  margin: 3px 0 0;
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.60);
+}
+
+/* Contact list */
+.footer-contact{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+
+.footer-contact li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color: rgba(255,255,255,.78);
+}
+
+.footer-contact i{
+  font-size: 18px;
+  opacity: .9;
+}
+
+/* Titles */
+.footer-title{
+  margin: 0 0 14px;
+  font-weight: 800;
+  font-size: 20px;
+  color: #fff;
+}
+
+.footer-title-accent{
+  display:inline-block;
+  margin-right: 8px;
+  color: rgba(255,255,255,.65);
+}
+
+/* Links */
+.footer-links{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+
+.footer-links a{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.footer-link-muted{
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+  white-space: nowrap;
+}
+
+.footer-link-accent{
+  color: #ff3b3b; /* acento tipo referencia (rojo) */
+  font-weight: 800;
+}
+
+/* Social */
+.footer-social{
+  display:flex;
+  gap:10px;
+  margin-top: 14px;
+}
+
+.footer-social a{
+  width:42px;
+  height:42px;
+  border-radius: 12px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  transition: transform .18s ease, background-color .18s ease, border-color .18s ease;
+}
+
+.footer-social a:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.18);
+}
+
+.footer-social i{ font-size: 20px; }
+
+/* Bottom */
+.footer-bottom{ margin-top: 28px; }
+.footer-divider{
+  height:1px;
+  width:100%;
+  background: rgba(255,255,255,.10);
+  margin: 18px 0 18px;
+}
+
+.footer-copy{
+  margin:0;
+  color: rgba(255,255,255,.70);
+  font-size: 13px;
+}
+
+.footer-copy--muted{
+  color: rgba(255,255,255,.55);
+}
+
+
+/* ===== FORCE FOOTER BLACK (override final) ===== */
+body footer.main-footer,
+body #footer.main-footer{
+  background: #000 !important;
+  background-color: #000 !important;
+  color: rgba(255,255,255,.88) !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* si el template mete pseudo-elementos encima */
+body #footer.main-footer::before,
+body #footer.main-footer::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* links y textos */
+body #footer a{ color: rgba(255,255,255,.88) !important; }
+body #footer a:hover{ color: #fff !important; }
+
+body #footer .footer-link-muted{ color: rgba(255,255,255,.58) !important; }
+body #footer .footer-divider{ background: rgba(255,255,255,.12) !important; }
+
+
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+}
+
+#particles-js canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+
+.hero-cursor {
+  display: inline-block;
+  margin-left: 0.04em;
+  animation: heroBlink 0.8s steps(1) infinite;
+}
+
+@keyframes heroBlink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.01%, 100% {
+    opacity: 0;
+  }
+}
+
 
 /*fin del codigo prueba*/
   body {
@@ -3854,6 +4488,11 @@ body.loaded {
 .load-text span:nth-child(7) {
   -webkit-animation-delay: 0.6s;
   animation-delay: 0.6s;
+}
+
+.load-text span:nth-child(8) {
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 
 @-webkit-keyframes loading {
