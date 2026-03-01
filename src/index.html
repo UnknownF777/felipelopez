@@ -191,7 +191,7 @@
 <section id="home" class="relative overflow-hidden bg-primaryColor pt-[90px]">
   
   <!-- Fondo animado -->
-  <div id="particles-js" class="absolute inset-0 z-0"></div>
+  <div id="particles-js" class="absolute left-0 right-0 bottom-0 top-[95px] lg:top-[110px] z-0 pointer-events-none"></div>
   <div class="container relative z-10">
   <div class="grid grid-cols-12 items-center gap-y-10 lg:gap-x-10 min-h-[calc(100vh-90px)] py-10 lg:py-16">
     
@@ -469,13 +469,13 @@
                   </div>
 
                   <div class="counter-item counter-text-wrap stat-item">
-                    <span class="count-text percent" data-speed="3000" data-stop="70">0</span>
+                    <span class="count-text percent" data-speed="3000" data-stop="80">0</span>
                     <span class="counter-title">Eficiencia impulsada por IA</span>
                   </div>
 
                   <div class="counter-item counter-text-wrap stat-item">
-                    <span class="count-text percent" data-speed="3000" data-stop="30">0</span>
-                    <span class="counter-title">Reducción de tiempo de reporting</span>
+                    <span class="count-text percent" data-speed="3000" data-stop="60">0</span>
+                    <span class="counter-title">Reducción de tiempo</span>
                   </div>
                 </div>
             </div>
@@ -1062,103 +1062,283 @@
     <!-- / END TECHNOLOGIES DESIGN AREA -->
 
     <!-- START PORTFOLIO DESIGN AREA -->
-    <div class="projects-area" id="portfolio">
-      <div class="custom-icon">
-        <img src="assets/images/custom/work-scribble.svg" alt="custom" />
-      </div>
-      <div class="container-fluid">
-        <div class="portfolio-grid grid grid-cols-12 gap-6">
-          <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-          <div class="portfolio-item category-1 col-span-12 md:col-span-6">
-            <a href="assets/images/projects/work1.jpg" class="work-popup">
-              <div class="portfolio-box">
-                <!-- Image -->
-                <img src="assets/images/projects/work1.jpg" alt="Sistema Gestión de Jardines Infantiles" data-rjs="2" class="w-full h-auto max-w-full" loading="lazy" />
-                <!-- Category -->
-                <span class="portfolio-category">web & app</span>
-                <!-- Caption -->
-                <div class="portfolio-caption">
-                  <h1>Sistema Gestión de Jardines Infantiles</h1>
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
-          <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-          <div class="portfolio-item category-2 col-span-12 md:col-span-6">
-            <a href="assets/images/projects/work2.jpg" class="work-popup">
-              <div class="portfolio-box">
-                <!-- Image -->
-                <img src="assets/images/projects/work2.jpg" alt="Landing Page - Inteli Flow" data-rjs="2" class="w-full h-auto max-w-full" loading="lazy" />
-                <!-- Category -->
-                <span class="portfolio-category">web</span>
-                <!-- Caption -->
-                <div class="portfolio-caption">
-                  <h1>Landing Page - Inteli Flow - Agentes IA</h1>
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
-          <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-          <div
-            class="portfolio-item category-2 col-span-12 md:col-span-6 xl:col-span-4"
-          >
-            <a
-              href="assets/images/projects/work3.jpg" class="work-popup"
-            >
-              <div class="portfolio-box">
-                <!-- Image -->
-                <img src="assets/images/projects/work3.jpg" alt="Generación de código con lenguaje natural" data-rjs="2" class="w-full h-auto max-w-full" loading="lazy" />
-                <!-- Category -->
-                <span class="portfolio-category">CODE GENERATION</span>
-                <!-- Caption -->
-                <div class="portfolio-caption">
-                  <h1>Genera y comprende código a partir de lenguaje natural.</h1>
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
-          <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-          <div
-            class="portfolio-item category-1 col-span-12 md:col-span-6 xl:col-span-4"
-          >
-            <a href="assets/images/projects/work4.jpg" class="work-popup">
-              <div class="portfolio-box">
-                <!-- Image -->
-                <img src="assets/images/projects/work4.jpg" alt="Ingeniería de prompts" data-rjs="2" class="w-full h-auto max-w-full" loading="lazy" />
-                <!-- Category -->
-                <span class="portfolio-category">PROMPT ENGINEERING</span>
-                <!-- Caption -->
-                <div class="portfolio-caption">
-                  <h1>Aplicación de técnicas avanzadas de ingeniería de contexto y diseño de prompts para optimizar la interacción entre desarrollador e IA.</h1>
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
-          <!-- START SINGLE PORTFOLIO DESIGN AREA -->
-          <div
-            class="portfolio-item category-2 col-span-12 md:col-span-6 xl:col-span-4"
-          >
-            <a href="assets/images/projects/work5.jpg" class="work-popup">
-              <div class="portfolio-box">
-                <!-- Image -->
-                <img src="assets/images/projects/work5.jpg" alt="Integración de agentes inteligentes" data-rjs="2" class="w-full h-auto max-w-full" loading="lazy" />
-                <!-- Category -->
-                <span class="portfolio-category">CODE ASSISTANT</span>
-                <!-- Caption -->
-                <div class="portfolio-caption">
-                  <h1>Integración de agentes inteligentes en el entorno de desarrollo para acelerar tareas, documentación y soporte técnico con IA.</h1>
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
-        </div>
+    <!-- START PORTFOLIO DESIGN AREA -->
+<section id="portfolio" class="py-16 lg:py-24 bg-black text-white overflow-hidden">
+  <div class="container">
+    
+    <!-- Encabezado -->
+    <div class="grid grid-cols-12 gap-6 items-end mb-10 lg:mb-14">
+      <div class="col-span-12 lg:col-span-8">
+  <!-- Eyebrow -->
+  <p class="text-xs sm:text-sm uppercase tracking-[0.24em] text-white/55">
+    Portafolio
+  </p>
+
+  <!-- Ícono + título alineados -->
+  <div class="mt-4 flex items-center gap-4 sm:gap-5">
+    
+    <!-- Ícono -->
+    <div class="shrink-0">
+      <div class="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-[0_8px_24px_rgba(0,0,0,0.22)]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 7V6a3 3 0 013-3h0a3 3 0 013 3v1M4 9h16M5 9l.8 8.4A2 2 0 007.79 19h8.42a2 2 0 001.99-1.6L19 9M10 12h4" />
+        </svg>
       </div>
     </div>
+
+    <!-- Título -->
+    <h2 class="text-[34px] sm:text-[42px] lg:text-[56px] font-semibold leading-[0.95] tracking-[-0.03em]">
+      Proyectos seleccionados
+    </h2>
+  </div>
+
+  <!-- Descripción -->
+  <p class="mt-5 max-w-[68ch] text-sm sm:text-base text-white/70 leading-relaxed">
+    Una selección de trabajos en desarrollo web, automatización, productos digitales y soluciones
+    apoyadas por IA. Diseño enfocado en claridad visual, experiencia de usuario y resultados.
+  </p>
+</div>
+      
+ 
+
+      <div class="col-span-12 lg:col-span-4 lg:text-right">
+        <a href="#contacto"
+          class="inline-flex items-center justify-center rounded-xl border border-white/15 px-5 py-3
+                 text-sm font-semibold text-white hover:bg-white hover:text-black transition-colors duration-200">
+          Hablemos de un proyecto
+        </a>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-12 gap-5 lg:gap-6">
+      
+      <!-- PROYECTO 1 -->
+      <article class="col-span-12 md:col-span-6 group">
+        <div class="rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm">
+          
+          <div class="relative aspect-[16/11] overflow-hidden">
+            <img
+              src="assets/images/projects/work1.jpg"
+              alt="Sistema Gestión de Jardines Infantiles"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+            <div class="absolute left-4 top-4">
+              <span class="inline-flex rounded-full border border-white/15 bg-black/45 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/85">
+                Web App
+              </span>
+            </div>
+
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+              <h3 class="text-xl sm:text-2xl font-semibold leading-tight">
+                Sistema de Gestión de Jardines Infantiles
+              </h3>
+              <p class="mt-2 text-sm text-white/75 leading-relaxed max-w-[58ch]">
+                Plataforma para gestión educativa digital con enfoque en administración, seguimiento y organización de procesos.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-5 sm:p-6">
+            <div class="flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.14em] text-white/55">
+              <span>UX/UI</span>
+              <span>•</span>
+              <span>Dashboard</span>
+              <span>•</span>
+              <span>Educación</span>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <button
+                type="button"
+                data-image="assets/images/projects/work1.jpg"
+                data-title="Sistema de Gestión de Jardines Infantiles"
+                class="open-portfolio-modal inline-flex items-center justify-center rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-white hover:bg-white hover:text-black transition-colors duration-200">
+                Ver imagen
+              </button>
+              <a href="https://github.com/"
+                target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-lg bg-white text-black px-4 py-2 text-sm font-semibold hover:bg-white/85 transition-colors duration-200">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROYECTO 2 -->
+      <article class="col-span-12 md:col-span-6 group">
+        <div class="rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm">
+          
+          <div class="relative aspect-[16/11] overflow-hidden">
+            <img
+              src="assets/images/projects/work2.jpg"
+              alt="Landing Page Inteli Flow"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+            <div class="absolute left-4 top-4">
+              <span class="inline-flex rounded-full border border-white/15 bg-black/45 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/85">
+                Landing Page
+              </span>
+            </div>
+
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+              <h3 class="text-xl sm:text-2xl font-semibold leading-tight">
+                Inteli Flow · Landing para Agentes IA
+              </h3>
+              <p class="mt-2 text-sm text-white/75 leading-relaxed max-w-[58ch]">
+                Diseño de landing orientada a conversión para presentar automatización comercial y asistentes virtuales.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-5 sm:p-6">
+            <div class="flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.14em] text-white/55">
+              <span>Conversión</span>
+              <span>•</span>
+              <span>UX</span>
+              <span>•</span>
+              <span>Automatización</span>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <button
+  type="button"
+  data-image="assets/images/projects/work2.jpg"
+  data-title="Inteli Flow · Landing para Agentes IA"
+  class="open-portfolio-modal inline-flex items-center justify-center rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-white hover:bg-white hover:text-black transition-colors duration-200">
+  Ver imagen
+</button>
+              <a href="https://github.com/"
+                target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-lg bg-white text-black px-4 py-2 text-sm font-semibold hover:bg-white/85 transition-colors duration-200">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROYECTO 3 -->
+      <article class="col-span-12 md:col-span-6 xl:col-span-4 group">
+        <div class="rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm h-full">
+          
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img
+              src="assets/images/projects/work3.jpg"
+              alt="Generación de código con lenguaje natural"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+            <div class="absolute left-4 top-4">
+              <span class="inline-flex rounded-full border border-white/15 bg-black/45 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/85">
+                Code Generation
+              </span>
+            </div>
+
+            <div class="absolute inset-x-0 bottom-0 p-5">
+              <h3 class="text-lg sm:text-xl font-semibold leading-tight">
+                Generación de código con lenguaje natural
+              </h3>
+            </div>
+          </div>
+
+          <div class="p-5">
+            <p class="text-sm text-white/70 leading-relaxed">
+              Solución orientada a acelerar tareas de desarrollo mediante prompts y asistencia contextual.
+            </p>
+
+            
+          </div>
+        </div>
+      </article>
+
+      <!-- PROYECTO 4 -->
+      <article class="col-span-12 md:col-span-6 xl:col-span-4 group">
+        <div class="rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm h-full">
+          
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img
+              src="assets/images/projects/work4.jpg"
+              alt="Ingeniería de prompts"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+            <div class="absolute left-4 top-4">
+              <span class="inline-flex rounded-full border border-white/15 bg-black/45 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/85">
+                Prompt Engineering
+              </span>
+            </div>
+
+            <div class="absolute inset-x-0 bottom-0 p-5">
+              <h3 class="text-lg sm:text-xl font-semibold leading-tight">
+                Ingeniería de prompts y contexto
+              </h3>
+            </div>
+          </div>
+
+          <div class="p-5">
+            <p class="text-sm text-white/70 leading-relaxed">
+              Aplicación de técnicas avanzadas para optimizar interacción, precisión y productividad con IA.
+            </p>
+
+        
+          </div>
+        </div>
+      </article>
+
+      <!-- PROYECTO 5 -->
+      <article class="col-span-12 md:col-span-6 xl:col-span-4 group">
+        <div class="rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm h-full">
+          
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img
+              src="assets/images/projects/work5.jpg"
+              alt="Integración de asistentes de código"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+            <div class="absolute left-4 top-4">
+              <span class="inline-flex rounded-full border border-white/15 bg-black/45 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/85">
+                AI Workflow
+              </span>
+            </div>
+
+            <div class="absolute inset-x-0 bottom-0 p-5">
+              <h3 class="text-lg sm:text-xl font-semibold leading-tight">
+                Integración de asistentes inteligentes
+              </h3>
+            </div>
+          </div>
+
+          <div class="p-5">
+            <p class="text-sm text-white/70 leading-relaxed">
+              Integración de asistentes en el flujo de desarrollo para acelerar documentación, soporte y ejecución técnica.
+            </p>
+
+        
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+<!-- // END PORTFOLIO DESIGN AREA -->
     <!-- // END PORTFOLIO DESIGN AREA -->
 
     <!-- START EXPERIENCIA LABORAL DESIGN AREA -->
@@ -1898,6 +2078,97 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("DOMContentLoaded", () => {
     typeHero();
+  });
+</script>
+
+<!-- PORTFOLIO IMAGE MODAL -->
+<div id="portfolioImageModal" class="fixed inset-0 z-[9999] hidden">
+  <!-- Fondo oscuro -->
+  <div id="portfolioModalOverlay" class="absolute inset-0 bg-black/88 backdrop-blur-sm"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 flex min-h-screen items-center justify-center p-4 sm:p-6">
+    <div class="relative w-full max-w-6xl">
+      
+      <!-- Botón cerrar -->
+      <button
+        id="closePortfolioModal"
+        type="button"
+        class="absolute -top-12 right-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white hover:bg-white hover:text-black transition-colors duration-200"
+        aria-label="Cerrar imagen">
+        ✕
+      </button>
+
+      <!-- Caja -->
+      <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+        <div class="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-3 sm:px-5">
+          <p id="portfolioModalTitle" class="text-sm sm:text-base font-semibold text-white/90">
+            Vista previa
+          </p>
+
+          <button
+            id="closePortfolioModalSecondary"
+            type="button"
+            class="inline-flex items-center justify-center rounded-lg border border-white/15 px-3 py-1.5 text-xs sm:text-sm font-semibold text-white hover:bg-white hover:text-black transition-colors duration-200">
+            Cerrar
+          </button>
+        </div>
+
+        <div class="bg-black flex items-center justify-center max-h-[85vh] overflow-auto">
+          <img
+            id="portfolioModalImage"
+            src=""
+            alt=""
+            class="block w-auto max-w-full h-auto max-h-[85vh] object-contain"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // PORTFOLIO IMAGE MODAL -->
+
+<script>
+  const portfolioModal = document.getElementById("portfolioImageModal");
+  const portfolioModalImage = document.getElementById("portfolioModalImage");
+  const portfolioModalTitle = document.getElementById("portfolioModalTitle");
+  const portfolioModalOverlay = document.getElementById("portfolioModalOverlay");
+  const closePortfolioModal = document.getElementById("closePortfolioModal");
+  const closePortfolioModalSecondary = document.getElementById("closePortfolioModalSecondary");
+  const portfolioModalTriggers = document.querySelectorAll(".open-portfolio-modal");
+
+  function openPortfolioImageModal(imageSrc, imageTitle) {
+    portfolioModalImage.src = imageSrc;
+    portfolioModalImage.alt = imageTitle || "Vista previa del proyecto";
+    portfolioModalTitle.textContent = imageTitle || "Vista previa";
+    portfolioModal.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+  }
+
+  function closePortfolioImageModal() {
+    portfolioModal.classList.add("hidden");
+    portfolioModalImage.src = "";
+    portfolioModalImage.alt = "";
+    portfolioModalTitle.textContent = "Vista previa";
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  portfolioModalTriggers.forEach((button) => {
+    button.addEventListener("click", () => {
+      const imageSrc = button.getAttribute("data-image");
+      const imageTitle = button.getAttribute("data-title");
+      openPortfolioImageModal(imageSrc, imageTitle);
+    });
+  });
+
+  portfolioModalOverlay.addEventListener("click", closePortfolioImageModal);
+  closePortfolioModal.addEventListener("click", closePortfolioImageModal);
+  closePortfolioModalSecondary.addEventListener("click", closePortfolioImageModal);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !portfolioModal.classList.contains("hidden")) {
+      closePortfolioImageModal();
+    }
   });
 </script>
 
