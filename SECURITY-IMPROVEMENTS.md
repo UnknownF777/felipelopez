@@ -1,6 +1,6 @@
 # Mejoras de Seguridad Implementadas
 **Fecha:** 19 de octubre de 2025
-**Proyecto:** pedrorivera.net - Portfolio Personal
+**Proyecto:** Portfolio Personal
 
 ## Resumen de Cambios
 

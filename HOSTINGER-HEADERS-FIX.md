@@ -98,11 +98,11 @@ Después de aplicar cualquiera de las opciones:
 
 2. **Verificar headers:**
 ```bash
-curl -I https://www.pedrorivera.net/
+curl -I https://www.FelipeLopezDataBIAnalyst.cl/
 ```
 
 3. **Probar en Security Headers:**
-   - https://securityheaders.com/?q=https://www.pedrorivera.net
+   - https://securityheaders.com/?q=https://www.FelipeLopezDataBIAnalyst.cl
 
 ---
 

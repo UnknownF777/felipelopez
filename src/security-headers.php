@@ -1,6 +1,6 @@
 <?php
 /**
- * SECURITY HEADERS - PEDRORIVERA.NET
+ * SECURITY HEADERS 
  * Archivo para forzar headers de seguridad HTTP en Hostinger
  *
  * INSTRUCCIONES DE USO:

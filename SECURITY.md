@@ -1,4 +1,4 @@
-# Guía de Seguridad - pedrorivera.net
+# Guía de Seguridad
 
 ## Resumen de Mejoras Implementadas
 
@@ -178,7 +178,7 @@ Analiza tu certificado en:
 ## Contacto de Seguridad
 
 Si encuentras una vulnerabilidad de seguridad, por favor repórtala de forma responsable a:
-- **Email**: pedroriveralobos.93@gmail.com
+- **Email**: felipelopez.ast@gmail.com
 - **Asunto**: [SEGURIDAD] Reporte de vulnerabilidad
 
 ---

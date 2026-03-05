@@ -1,4 +1,4 @@
-# robots.txt para pedrorivera.net
+# robots.txt 
 # Control de acceso para crawlers y bots
 
 # Permitir a todos los bots legítimos
@@ -35,4 +35,4 @@ Disallow: /
 Crawl-delay: 10
 
 # Sitemap (crear este archivo cuando esté listo)
-# Sitemap: https://pedrorivera.net/sitemap.xml
+# Sitemap:
