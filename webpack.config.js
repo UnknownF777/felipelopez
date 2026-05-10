@@ -77,7 +77,28 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "src/assets", to: "assets" },
+        {
+          from: "src/assets",
+          to: "assets",
+          globOptions: {
+            ignore: [
+              "**/js/jquery-3.6.0.min.js",
+              "**/js/slick.js",
+              "**/js/slick.min.js",
+              "**/js/form-validator.min.js",
+              "**/js/jquery.ajaxchimp.min.js",
+              "**/js/contact-form-script.js",
+              "**/js/index.js",
+              "**/css/fontawesome.min.css",
+              "**/css/swiper-bundle.css",
+              "**/fonts/remixicon.glyph.json",
+              "**/fonts/remixicon.symbol.svg",
+              "**/fonts/remixicon.less",
+              "**/fonts/remixicon.scss",
+              "**/fonts/remixicon.styl",
+            ],
+          },
+        },
         { from: "src/docs", to: "docs", noErrorOnMissing: true },
         { from: "src/.htaccess", to: ".htaccess", toType: "file" },
         { from: "src/robots.txt", to: "robots.txt", toType: "file" },
