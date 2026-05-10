@@ -9,9 +9,9 @@
     "security-check": "npm audit && npm outdated",
     "update-deps": "npm update && npm audit fix"
   },
-  "author": "",
+  "author": "Felipe López",
   "license": "ISC",
-  "description": "",
+  "description": "Portafolio profesional de Felipe López, Analista de Datos, Business Intelligence y Desarrollo Web",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "baseline-browser-mapping": "^2.9.14",
