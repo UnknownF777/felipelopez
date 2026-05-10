@@ -47,7 +47,6 @@ function setSecurityHeaders() {
     header('Content-Security-Policy: ' . $csp, true);
 
     // Cross-Origin headers para mejor aislamiento
-    header('Cross-Origin-Embedder-Policy: require-corp', true);
     header('Cross-Origin-Opener-Policy: same-origin', true);
     header('Cross-Origin-Resource-Policy: same-origin', true);
 
