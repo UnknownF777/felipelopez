@@ -78,7 +78,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "src/assets", to: "assets" },
-        { from: "docs", to: "docs" },
+        { from: "src/docs", to: "docs", noErrorOnMissing: true },
         { from: "src/.htaccess", to: ".htaccess", toType: "file" },
         { from: "src/robots.txt", to: "robots.txt", toType: "file" },
         // { from: "src/manifest.json", to: "manifest.json" },

@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve",
-    "build": "webpack",
+    "dev": "webpack serve --config webpack.config.js",
+    "build": "webpack --config webpack-prod.config.js",
+    "build:dev": "webpack --config webpack.config.js",
     "security-check": "npm audit && npm outdated",
     "update-deps": "npm update && npm audit fix"
   },
