@@ -86,7 +86,7 @@
   $("#mobile-menu").meanmenu({
     meanMenuContainer: ".mobile-menu",
     meanScreenWidth: "991",
-    meanExpand: ['<i class="fal fa-plus"></i>'],
+    meanExpand: ['<i class="ri-add-line"></i>'],
   });
 
   $(".sidebar__close-btn ,.mobile-menu .onepage li a  > *:not(button)").on(
