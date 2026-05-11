@@ -1824,7 +1824,8 @@ body #footer .footer-divider{ background: rgba(255,255,255,.12) !important; }
   }
 
   .list-style-two li:before {
-    @apply leading-1 font-awesome-5-pro mr-5 h-[30px] w-[30px] rounded-full bg-primaryColor text-center text-base leading-[30px] text-lighterColor content-["\f00c"];
+    @apply leading-1 mr-5 h-[30px] w-[30px] rounded-full bg-primaryColor text-center text-base leading-[30px] text-lighterColor content-["\eb7b"];
+    font-family: "remixicon";
   }
 
   .list-style-two li:not(:last-child) {
@@ -2016,8 +2017,8 @@ body #footer .footer-divider{ background: rgba(255,255,255,.12) !important; }
   }
 
   .main-menu ul li.has-dropdown > a:after {
-    @apply absolute right-[-4px] top-[10px] text-[16px] text-mainColor transition duration-300 ease-in-out content-['\f107'];
-    font-family: "Font Awesome 6 Pro";
+    @apply absolute right-[-4px] top-[10px] text-[16px] text-mainColor transition duration-300 ease-in-out content-['\ea4e'];
+    font-family: "remixicon";
   }
 
   .main-menu ul li .sub-menu li.has-dropdown > a:after {
