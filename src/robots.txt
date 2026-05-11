@@ -6,9 +6,6 @@ User-agent: *
 Allow: /
 
 # Bloquear acceso a directorios técnicos y privados
-Disallow: /assets/js/
-Disallow: /assets/css/
-Disallow: /docs/
 Disallow: /*.json$
 Disallow: /*.config.js$
 

@@ -1,5 +1,5 @@
 # =====================================================
-# ARCHIVO DE SEGURIDAD - PEDRORIVERA.NET
+# ARCHIVO DE SEGURIDAD
 # Configuración Apache para headers de seguridad HTTP
 # =====================================================
 
@@ -74,9 +74,6 @@ DirectoryIndex index.html index.htm
     Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://formsubmit.co https://cdn.jsdelivr.net https://oss.maxcdn.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://formsubmit.co; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co; frame-ancestors 'self'; upgrade-insecure-requests;" env=HTTPS
 
     # Cross-Origin headers adicionales para mejor puntuación
-    Header set Cross-Origin-Embedder-Policy "require-corp" env=!HTTPS
-    Header always set Cross-Origin-Embedder-Policy "require-corp" env=HTTPS
-
     Header set Cross-Origin-Opener-Policy "same-origin" env=!HTTPS
     Header always set Cross-Origin-Opener-Policy "same-origin" env=HTTPS
 
@@ -98,7 +95,7 @@ DirectoryIndex index.html index.htm
 <IfModule mod_rewrite.c>
     RewriteEngine on
     RewriteCond %{HTTP_REFERER} !^$
-    RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?pedrorivera\.net [NC]
+    RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?felipelopez\.cl [NC]
     RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?google\. [NC]
     RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?bing\. [NC]
     RewriteRule \.(jpg|jpeg|png|gif|svg|webp|ico)$ - [NC,F,L]

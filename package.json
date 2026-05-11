@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve",
-    "build": "webpack",
+    "dev": "webpack serve --config webpack.config.js",
+    "build": "webpack --config webpack-prod.config.js",
+    "build:dev": "webpack --config webpack.config.js",
     "security-check": "npm audit && npm outdated",
     "update-deps": "npm update && npm audit fix"
   },
-  "author": "",
+  "author": "Felipe López",
   "license": "ISC",
-  "description": "",
+  "description": "Portafolio profesional de Felipe López, Analista de Datos, Business Intelligence y Desarrollo Web",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "baseline-browser-mapping": "^2.9.14",
