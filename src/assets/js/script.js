@@ -1,43 +1,6 @@
 
 (function ($) {
   "use strict";
-
-  /*
-   * ----------------------------------------------------------------------------------------
-   *  SWIPER JS
-   * ----------------------------------------------------------------------------------------
-   */
-  var postboxSlider = new Swiper(".postbox__slider", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    autoplay: {
-      delay: 3000,
-    },
-    // Navigation arrows
-    navigation: {
-      nextEl: ".postbox-slider-button-next",
-      prevEl: ".postbox-slider-button-prev",
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 1,
-      },
-      992: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 1,
-      },
-      576: {
-        slidesPerView: 1,
-      },
-      0: {
-        slidesPerView: 1,
-      },
-    },
-  });
-
   /*
    * ----------------------------------------------------------------------------------------
    *  EXTRA JS
@@ -110,55 +73,6 @@
     $(".sidebar__area").removeClass("sidebar-opened");
     $(".body-overlay").removeClass("opened");
   });
-
-  /*
-   * ----------------------------------------------------------------------------------------
-   *  MAGNIFIC POPUP JS
-   * ----------------------------------------------------------------------------------------
-   */
-
-  var magnifPopup = function () {
-    $(".work-popup").magnificPopup({
-      type: "image",
-      removalDelay: 300,
-      mainClass: "mfp-with-zoom",
-      gallery: {
-        enabled: true,
-      },
-      zoom: {
-        enabled: false, // By default it's false, so don't forget to enable it
-
-        duration: 300, // duration of the effect, in milliseconds
-        easing: "ease-in-out", // CSS transition easing function
-
-        // The "opener" function should return the element from which popup will be zoomed in
-        // and to which popup will be scaled down
-        // By defailt it looks for an image tag:
-        opener: function (openerElement) {
-          // openerElement is the element on which popup was initialized, in this case its <a> tag
-          // you don't need to add "opener" option if this code matches your needs, it's defailt one.
-          return openerElement.is("img")
-            ? openerElement
-            : openerElement.find("img");
-        },
-      },
-    });
-
-    $(".popup-youtube, .popup-vimeo, .popup-gmaps, .popup-video").magnificPopup(
-      {
-        disableOn: 700,
-        type: "iframe",
-        mainClass: "mfp-fade",
-        removalDelay: 160,
-        preloader: false,
-
-        fixedContentPos: false,
-      },
-    );
-  };
-  // Call the functions
-  magnifPopup();
-
   /*
    * ----------------------------------------------------------------------------------------
    *  SCROOL TO UP JS
@@ -271,52 +185,6 @@
   });
 
   gsap.ticker.lagSmoothing(0);
-
-  // ## Testimonials Active
-  if ($(".testimonials-wrap").length) {
-    $(".testimonials-wrap").slick({
-      dots: false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      arrows: true,
-      speed: 1000,
-      focusOnSelect: false,
-      prevArrow: ".testimonial-prev",
-      nextArrow: ".testimonial-next",
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 1,
-          },
-        },
-      ],
-    });
-  }
-
-  // ## Project Filter
-  $(".project-filter li").on("click", function () {
-    $(".project-filter li").removeClass("current");
-    $(this).addClass("current");
-
-    var selector = $(this).attr("data-filter");
-    $(".project-masonry-active").imagesLoaded(function () {
-      $(".project-masonry-active").isotope({
-        itemSelector: ".item",
-        filter: selector,
-        masonry: {
-          columnWidth: ".item",
-        },
-      });
-    });
-  });
-
-  // ## Nice Select
-$('select').not('#country').niceSelect();
-
 
   // ## WOW Animation
   if ($(".wow").length) {
